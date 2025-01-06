@@ -26,11 +26,14 @@
   
   {
     nixosConfigurations = {
-      default = nixpkgs.lib.nixosSystem {
+      cappuccino = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          ./host/cappuccino/hardware-configuration.nix
+          ./host/cappuccino/hostname.nix
+
           # Default config + secureboot (lanzaboot)
-          ./host/default/configuration.nix
+          ./host/configuration.nix
           lanzaboote.nixosModules.lanzaboote
           ./modules/secureboot.nix
           

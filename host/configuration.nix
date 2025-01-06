@@ -6,11 +6,9 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./hostname.nix
-      ../../users/jerry.nix
-      ../../users/rc.nix
+    [ 
+      ../users/jerry.nix
+      ../users/rc.nix
     ];
 
   nix.settings.experimental-features = [
