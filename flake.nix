@@ -43,6 +43,15 @@
         ];
       };
 
+      # Coffee | Acer TravelMate
+      coffee = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = defaultModules ++ [
+          ./host/coffee/hardware-configuration.nix
+          ./host/coffee/hostname.nix
+        ];
+      };
+
     };
   };
 }
