@@ -19,8 +19,11 @@
   let
     # Modules all my hosts should have in common go here.
     defaultModules = [
-      # Default config + secureboot (lanzaboot)
+      # Default config
       ./host/configuration.nix
+
+      # Secureboot (lanzaboot)
+      # NOTE: Comment these out during first install (nixos-install).
       lanzaboote.nixosModules.lanzaboote
       ./modules/secureboot.nix
       
