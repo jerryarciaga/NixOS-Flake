@@ -24,21 +24,23 @@
       lanzaboote.nixosModules.lanzaboote
       ./modules/secureboot.nix
       
-      # Desktop + Apps
+      # Desktop
       ./modules/qtile.nix
+
+      # Apps
       ./modules/yubikey.nix
     ];
   in
   {
     nixosConfigurations = {
 
-      # Cappuccino
+      # Cappuccino | Dell Optiplex Tower 7010
       cappuccino = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [
+        modules = defaultModules ++ [
           ./host/cappuccino/hardware-configuration.nix
           ./host/cappuccino/hostname.nix
-        ] ++ defaultModules;
+        ];
       };
 
     };
