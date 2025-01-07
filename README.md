@@ -41,13 +41,6 @@ mount -o umask=077 /dev/disk/by-label/boot /mnt/boot
 ```
 It is up to you how you want to mount the rest of the partitions.
 
-## Secure Boot
-I still have to test this if it works using a whole new machine. The machine has to have SecureBoot disabled first, then in Setup Mode. `sbctl` is probably not installed by default on the LiveISO. Basically, create secureboot keys using `sbctl` then enroll them.
-```
-# sbctl create-keys -e /mnt/var/lib/sbctl
-```
-
-
 ## NixOS Flake
 For this, you need to clone this repo, `cd` into it, generate hardware configuration then run the install command. I also need to test this out.
 ```
@@ -55,23 +48,43 @@ $ git clone https://github.com/jerryarciaga/NixOS-Flake flake
 $ cd flake
 $ sudo nixos-generate-config --root /mnt --show-hardware-config | tee ./host/default/hardware-configuration.nix
 ```
-
-## Set hostname
-I have separated this file from the config so I can put in different hostnames on different machines.
+## Secure boot
+According to [lanzaboote documentation](https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md), you need to first setup systemd-boot before switching to lanzaboote. This means you can't go straight into setting sbctl up during the installation phase. Because of this, prior to running nixos-install, you have to first uncomment the following lines in `flake.nix`
 ```
-$ cat ./host/default/hostname.nix 
-
-{ config, pkgs, ... }:
-
-{
-  networking.hostName = "cappuccino";
-}
+# lanzaboote.nixosModules.lanzaboote
+# ./modules/secureboot.nix
 ```
 
 ## Install
 At this point, everything should be ready to for installation. Again, I still have to test this.
 ```
-# nixos-install --root --flake path://${PWD}#default
-# sbctl --verify
-# reboot # At this point, ensure secureboot is back on
+# nixos-install --root --flake path://${PWD}#<hostname>
 ```
+## Secure Boot
+After installation, you can clone this repository again, ensuring those two lines before are now uncommented. At this point you need to do the following:
+### Create keys
+```
+$ sudo sbctl create-keys # Might have to do sbctl set --migrate if needed
+```
+### Clone and rebuild
+Cloning the repository should have the secure boot lines uncommented. You can check just to be sure.
+```
+$ git clone https://github.com/jerryarciaga/NixOS-Flake flake
+$ sudo nixos-rebuild switch --flake path://${PWD}
+$ reboot
+```
+### Set boot options to Setup Mode
+This step varies from device to device. It is usually done by setting to *audit mode*, *setup mode*, or deleting platform keys (or maybe all secure boot keys).
+### Enroll keys
+After booting up, these keys should now be ready for enrollment. Booting it up should automatically disable setup mode.
+```
+$ sudo sbctl enroll-keys --microsoft
+```
+## Verify secure boot
+After booting up, check to see that Secure Boot is now enabled.
+```
+$ sbctl status
+```
+Congrats! You can follow directions.
+
+## Post Installation
