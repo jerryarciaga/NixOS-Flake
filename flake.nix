@@ -16,24 +16,31 @@
     ...
   }:
   
+  let
+    # Modules all my hosts should have in common go here.
+    defaultModules = [
+      # Default config + secureboot (lanzaboot)
+      ./host/configuration.nix
+      lanzaboote.nixosModules.lanzaboote
+      ./modules/secureboot.nix
+      
+      # Desktop + Apps
+      ./modules/qtile.nix
+      ./modules/yubikey.nix
+    ];
+  in
   {
     nixosConfigurations = {
+
+      # Cappuccino
       cappuccino = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./host/cappuccino/hardware-configuration.nix
           ./host/cappuccino/hostname.nix
-
-          # Default config + secureboot (lanzaboot)
-          ./host/configuration.nix
-          lanzaboote.nixosModules.lanzaboote
-          ./modules/secureboot.nix
-          
-          # Desktop + Apps
-          ./modules/qtile.nix
-          ./modules/yubikey.nix
-        ];
+        ] ++ defaultModules;
       };
+
     };
   };
 }
