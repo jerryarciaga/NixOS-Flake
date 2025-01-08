@@ -49,10 +49,13 @@ $ cd flake
 $ sudo nixos-generate-config --root /mnt --show-hardware-config | tee ./host/default/hardware-configuration.nix
 ```
 ## Secure boot
-According to [lanzaboote documentation](https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md), you need to first setup systemd-boot before switching to lanzaboote. This means you can't go straight into setting sbctl up during the installation phase. Because of this, prior to running nixos-install, you have to first uncomment the following lines in `flake.nix`
+According to [lanzaboote documentation](https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md), you need to first setup systemd-boot before switching to lanzaboote. This means you can't go straight into setting sbctl up during the installation phase. Because of this, prior to running nixos-install, you have to first comment the following lines out in `flake.nix`
 ```
+$ cat flake.nix
+
 # lanzaboote.nixosModules.lanzaboote
 # ./modules/secureboot.nix
+
 ```
 
 ## Install
@@ -69,7 +72,7 @@ $ sudo sbctl create-keys # Might have to do sbctl set --migrate if needed
 ### Clone and rebuild
 Cloning the repository should have the secure boot lines uncommented. You can check just to be sure.
 ```
-$ git clone https://github.com/jerryarciaga/NixOS-Flake flake
+$ git clone https://github.com/jerryarciaga/NixOS-Flake nixos
 $ sudo nixos-rebuild switch --flake path://${PWD}
 $ reboot
 ```
