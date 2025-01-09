@@ -22,7 +22,9 @@
         # the path to your home.nix.
         modules = [
           ./home.nix
-          ./git.nix
+
+          ./modules/git.nix
+          ./modules/fonts.nix
         ];
 
         # Optionally use extraSpecialArgs

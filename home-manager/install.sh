@@ -30,3 +30,15 @@ for config_file in $CONFIG_FILES; do
   ln -sf $config_file $CONFIG_DIR/.
   echo "Link to $config_file"
 done
+
+# Relink modules
+if [[ -d $CONFIG_DIR/modules ]]; then
+  echo "Removing directory $CONFIG_DIR/modules..."
+  rm -rf $CONFIG_DIR/modules
+elif [[ -a $CONFIG_DIR/modules ]]; then
+  rm $CONFIG_DIR/modules
+  echo "Removing file/link $CONFIG_DIR/modules..."
+fi
+
+echo "Creating link $HOME_MANAGER/modules -> $CONFIG_DIR/modules..."
+ln -sf $HOME_MANAGER/modules $CONFIG_DIR/modules
