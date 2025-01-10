@@ -41,8 +41,8 @@
       cappuccino = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = defaultModules ++ [
-          ./host/cappuccino/hardware-configuration.nix
           ./host/cappuccino/hostname.nix
+          ./host/cappuccino/hardware-configuration.nix
           ./modules/intel_graphics.nix
         ];
       };
@@ -51,8 +51,8 @@
       coffee = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = defaultModules ++ [
-          ./host/coffee/hardware-configuration.nix
           ./host/coffee/hostname.nix
+          ./host/coffee/hardware-configuration.nix
           ./modules/intel_graphics.nix
         ];
       };
