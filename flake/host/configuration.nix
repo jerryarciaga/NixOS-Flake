@@ -31,10 +31,6 @@
       };
     };
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = [
-      "i915.force_probe=8086:4680"
-      "acpi_backlight=video"
-    ];
   };
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -117,22 +113,6 @@
     wget
     alacritty
   ];
-
-
-  # GPU: Might be its separate config
-  hardware = {
-    intel-gpu-tools = {
-      enable = true;
-    };
-    graphics = {
-      enable = true;
-      extraPackages = with pkgs; [
-        intel-media-driver
-        intel-ocl
-        intel-vaapi-driver
-      ];
-    };
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

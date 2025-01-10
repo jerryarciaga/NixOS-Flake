@@ -43,6 +43,7 @@
         modules = defaultModules ++ [
           ./host/cappuccino/hardware-configuration.nix
           ./host/cappuccino/hostname.nix
+          ./modules/intel_graphics.nix
         ];
       };
 
@@ -52,6 +53,7 @@
         modules = defaultModules ++ [
           ./host/coffee/hardware-configuration.nix
           ./host/coffee/hostname.nix
+          ./modules/intel_graphics.nix
         ];
       };
 
