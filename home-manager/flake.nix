@@ -24,6 +24,7 @@
           ./home.nix
 
           ./modules/git.nix
+          ./modules/firefox.nix
           ./modules/fonts.nix
         ];
 
