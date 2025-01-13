@@ -9,6 +9,8 @@
   home.packages = with pkgs; [
     flatpak
     rofi-wayland
+    slurp
+    grim
   ];
 
   home.file = {
