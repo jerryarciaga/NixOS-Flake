@@ -57,6 +57,17 @@
         ];
       };
 
+      # Americano | HP ProBook 640 G4
+      americano = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = defaultModules ++ [
+          ./host/americano/hostname.nix
+          ./host/americano/hardware-configuration.nix
+          ./modules/intel_graphics.nix
+        ];
+      };
+
+
     };
   };
 }
