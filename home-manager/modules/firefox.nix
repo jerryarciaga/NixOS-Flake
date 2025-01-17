@@ -11,6 +11,12 @@ let
   };
 in
 {
+  # Enable smartcard use
+  home.packages = with pkgs; [
+    opensc
+    ccid
+  ];
+
   programs.firefox = {
     enable = true;
 
@@ -24,6 +30,11 @@ in
         Cryptomining = true;
         Fingerprinting = true;
         EmailTracking = true;
+      };
+
+      # Security Devices
+      SecurityDevices.Add = {
+        "Smartcard" = pkgs.opensc + "/lib/opensc-pkcs11.so";
       };
 
       # Autofill
