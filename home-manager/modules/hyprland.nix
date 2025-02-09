@@ -290,6 +290,21 @@
       bind = $mainMod SHIFT, 9, movetoworkspace, 9
       bind = $mainMod SHIFT, 0, movetoworkspace, 10
 
+      # will switch to a submap called resize
+      bind = ALT, R, submap, resize
+      
+      # Resize active window
+      submap = resize
+      # sets repeatable binds for resizing the active window
+      binde = , L, resizeactive, 10 0
+      binde = , H, resizeactive, -10 0
+      binde = , K, resizeactive, 0 -10
+      binde = , J, resizeactive, 0 10
+      # use reset to go back to the global submap
+      bind = , escape, submap, reset
+      # will reset the submap, which will return to the global submap
+      submap = reset
+
       # Bind apps
       bind = $mainMod, B, exec, firefox
       bind = $mainMod SHIFT, B, exec, firefox --private-window
