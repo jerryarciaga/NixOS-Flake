@@ -23,8 +23,12 @@
         modules = [
           ./home.nix
 
+          # Hyprland dots
           ./modules/hyprland.nix
+          ./modules/waybar.nix
+          ./modules/wofi.nix
 
+          # App configs
           ./modules/git.nix
           ./modules/vim.nix
           ./modules/neovim.nix
