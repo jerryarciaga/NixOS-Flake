@@ -24,7 +24,6 @@
 
         "hyprland/workspaces" = {
           active-only = false;
-          disable-scroll = true;
           all-outputs = true;
         };
 
@@ -293,6 +292,7 @@
 
       # Bind apps
       bind = $mainMod, B, exec, firefox
+      bind = $mainMod SHIFT, B, exec, firefox --private-window
       
       # Example special workspace (scratchpad)
       bind = $mainMod, S, togglespecialworkspace, magic
