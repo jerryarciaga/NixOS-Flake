@@ -27,7 +27,7 @@
         };
 
         "clock" = {
-          "format" = "{:%H\n%M}";
+          "format" = "{:%H\n%M\n\n%d\n%b}";
           "tooltip-format" = "<tt><small>{calendar}</small></tt>";
           "calendar" =  {
             "mode"          = "year";
