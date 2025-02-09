@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+
+  ################
+  #### Waybar ####
+  ################
   programs.waybar = {
     enable = true;
     settings = {
@@ -9,10 +13,10 @@
         position = "left";
         width = 10;
         modules-left = [ 
-          "hyprland/workspaces"
           "hyprland/mode"
         ];
         modules-center = [
+          "hyprland/workspaces"
         ];
         modules-right = [
           "tray"
@@ -35,6 +39,21 @@
       };
     };
   };
+
+  #################
+  #### Wofi #######
+  #################
+  programs.wofi = {
+    enable = true;
+    settings = {
+      location = "center";
+      width = 250;
+    };
+  };
+
+  #################
+  #### Wayland ####
+  #################
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = ''
@@ -323,11 +342,15 @@
       
       # Laptop multimedia keys for volume and LCD brightness
       bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
+      bindel = $mainMod, UP, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
       bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+      bindel = $mainMod, DOWN, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
       bindel = ,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
       bindel = ,XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
       bindel = ,XF86MonBrightnessUp, exec, brightnessctl s 10%+
+      bindel = $mainMod, RIGHT, exec, brightnessctl s 10%+
       bindel = ,XF86MonBrightnessDown, exec, brightnessctl s 10%-
+      bindel = $mainMod, LEFT, exec, brightnessctl s 10%-
       
       # Requires playerctl
       bindl = , XF86AudioNext, exec, playerctl next
