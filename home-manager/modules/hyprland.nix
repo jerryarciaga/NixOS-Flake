@@ -1,6 +1,41 @@
 { config, pkgs, ... }:
 
 {
+  programs.waybar = {
+    enable = true;
+    settings = {
+      mainBar = {
+        layer = "top";
+        position = "left";
+        width = 10;
+        modules-left = [ 
+          "hyprland/workspaces"
+          "hyprland/mode"
+        ];
+        modules-center = [
+        ];
+        modules-right = [
+          "tray"
+          "backlight"
+          "pulseaudio"
+          "clock"
+          "date"
+        ];
+
+        "hyprland/workspaces" = {
+          active-only = false;
+          disable-scroll = true;
+          all-outputs = true;
+        };
+
+        "clock" = {
+          "format" = "{:%H:%M\n%d %b}";
+          "format-alt" = "{:%H:%M\n%a, %d %b}";
+        };
+
+      };
+    };
+  };
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = ''
@@ -45,7 +80,8 @@
       
       # exec-once = $terminal
       # exec-once = nm-applet &
-      # exec-once = waybar & hyprpaper & firefox
+      # exec-once = waybar & hyprpaper &
+      exec-once = waybar &
       
       
       #############################
@@ -54,8 +90,8 @@
       
       # See https://wiki.hyprland.org/Configuring/Environment-variables/
       
-      env = XCURSOR_SIZE,24
-      env = HYPRCURSOR_SIZE,24
+      env = XCURSOR_SIZE,16
+      env = HYPRCURSOR_SIZE,16
       
       
       #####################
