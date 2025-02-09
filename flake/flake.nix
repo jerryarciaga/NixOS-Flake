@@ -7,6 +7,7 @@
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = {
@@ -14,7 +15,7 @@
     nixpkgs,
     lanzaboote,
     ...
-  }:
+  } @ inputs:
   
   let
     # Modules all my hosts should have in common go here.
@@ -28,6 +29,7 @@
       ./modules/secureboot.nix
       
       # Desktop
+      ./modules/hyprland.nix
       ./modules/qtile.nix
 
       # Apps
@@ -40,6 +42,7 @@
       # Cappuccino | Dell Optiplex Tower 7010
       cappuccino = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = defaultModules ++ [
           ./host/cappuccino/hostname.nix
           ./host/cappuccino/hardware-configuration.nix
@@ -50,6 +53,7 @@
       # Coffee | Acer TravelMate
       coffee = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = defaultModules ++ [
           ./host/coffee/hostname.nix
           ./host/coffee/hardware-configuration.nix
@@ -60,6 +64,7 @@
       # Americano | HP ProBook 640 G4
       americano = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = defaultModules ++ [
           ./host/americano/hostname.nix
           ./host/americano/hardware-configuration.nix
