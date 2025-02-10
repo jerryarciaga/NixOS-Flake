@@ -24,9 +24,9 @@
           ./home.nix
 
           # Hyprland dots
-          ./modules/hyprland.nix
-          ./modules/waybar.nix
-          ./modules/wofi.nix
+          ./desktop/hyprland.nix
+          ./desktop/waybar.nix
+          ./desktop/wofi.nix
 
           # App configs
           ./modules/git.nix
