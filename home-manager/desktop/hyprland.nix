@@ -272,6 +272,9 @@
       # will reset the submap, which will return to the global submap
       submap = reset
 
+      # Bind Hyprland-related apps
+      bind = $mainMod CTRL, S, exec, hyprlock
+
       # Bind apps
       bind = $mainMod, B, exec, firefox
       bind = $mainMod SHIFT, B, exec, firefox --private-window
