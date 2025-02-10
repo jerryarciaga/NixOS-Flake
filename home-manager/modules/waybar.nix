@@ -11,12 +11,12 @@
         width = 10;
         modules-left = [ 
           "hyprland/workspaces"
+          "tray"
         ];
         modules-center = [
           "clock"
         ];
         modules-right = [
-          "tray"
           "backlight"
           "pulseaudio"
         ];
@@ -106,11 +106,11 @@
       }
 
       #workspaces button.active {
-        background: @ctp-mocha-green;
+        background: @ctp-mocha-blue;
       }
 
       #clock {
-        background: @ctp-mocha-blue;
+        background: @ctp-mocha-sky;
       }
 
       #backlight {
@@ -120,7 +120,7 @@
 
       #pulseaudio {
         border-radius: 4px;
-        background: @ctp-mocha-peach;
+        background: @ctp-mocha-sapphire;
       }
 
     '';
