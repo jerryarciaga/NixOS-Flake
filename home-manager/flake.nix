@@ -33,6 +33,7 @@
           ./modules/git.nix
           ./modules/vim.nix
           ./modules/neovim.nix
+          ./modules/zathura.nix
           ./modules/firefox.nix
           ./modules/fonts.nix
         ];
