@@ -7,5 +7,6 @@
     noto-fonts
     noto-fonts-emoji
     font-awesome
+    gyre-fonts
   ];
 }
