@@ -30,7 +30,6 @@
       
       # Desktop
       ./modules/hyprland.nix
-      ./modules/qtile.nix
 
       # Apps
       ./modules/yubikey.nix

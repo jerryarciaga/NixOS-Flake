@@ -65,12 +65,6 @@
     displayManager = {
       lightdm.enable = true;
     };
-    windowManager.qtile = {
-      enable = true;
-      extraPackages = python3Packages: with python3Packages; [
-        qtile-extras
-      ];
-    };
     videoDrivers = [ "modesetting" ];
   };
 
@@ -102,7 +96,6 @@
     dbus
     vim
     wget
-    alacritty
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
