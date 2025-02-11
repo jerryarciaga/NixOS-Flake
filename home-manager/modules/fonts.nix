@@ -9,5 +9,6 @@
     font-awesome
     gyre-fonts
     cascadia-code
+    nerd-fonts.ubuntu
   ];
 }
