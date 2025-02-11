@@ -80,6 +80,7 @@
         @define-color ctp-mocha-crust #11111b;
       
       * {
+        font-family: "Ubuntu Nerd Font Med";
         font-size: 12px;
         min-width: 8px;
         min-height: 0px;
