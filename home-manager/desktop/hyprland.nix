@@ -68,8 +68,8 @@
       
       # https://wiki.hyprland.org/Configuring/Variables/#general
       general {
-          gaps_in = 3
-          gaps_out = 5
+          gaps_in = 5
+          gaps_out = 8
       
           border_size = 1
       
