@@ -16,8 +16,18 @@
         semantic_escape_chars = ",`|\"'()[]{}<>\t";
       };
       window = {
-        opacity = 0.90;
+        opacity = 0.9;
         blur = true;
+        padding.x = 10;
+        padding.y = 10;
+        decorations = "Full";
+      };
+      font = {
+        normal.family = "Cascadia Code PL";
+        bold.family = "Cascadia Code PL";
+        italic.family = "Cascadia Code PL";
+        bold_italic.family = "Cascadia Code PL";
+        size = 12.0;
       };
       keyboard.bindings = [
         {

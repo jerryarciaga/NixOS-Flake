@@ -8,5 +8,6 @@
     noto-fonts-emoji
     font-awesome
     gyre-fonts
+    cascadia-code
   ];
 }
