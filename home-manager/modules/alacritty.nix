@@ -22,6 +22,9 @@
         padding.y = 10;
         decorations = "Full";
       };
+      colors = {
+        transparent_background_colors = true;
+      };
       font = {
         normal.family = "Cascadia Code PL";
         bold.family = "Cascadia Code PL";
