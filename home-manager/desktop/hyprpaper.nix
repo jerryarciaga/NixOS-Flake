@@ -6,14 +6,14 @@
     settings = {
       ipc = "on";
       preload = [
-        "~/.wallpaper/mondstadt.jpg"
-        "~/.wallpaper/liyue.jpg"
-        "~/.wallpaper/inazuma.jpg"
-        "~/.wallpaper/sumeru.jpg"
-        "~/.wallpaper/fontaine.jpg"
+        "~/.config/wallpaper/mondstadt.jpg"
+        "~/.config/wallpaper/liyue.jpg"
+        "~/.config/wallpaper/inazuma.jpg"
+        "~/.config/wallpaper/sumeru.jpg"
+        "~/.config/wallpaper/fontaine.jpg"
       ];
       wallpaper = [
-        ", ~/.wallpaper/mondstadt.jpg"
+        ", ~/.config/wallpaper/mondstadt.jpg"
       ];
     };
   };
