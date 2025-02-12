@@ -25,6 +25,7 @@
 
           # Hyprland dots
           ./desktop/hyprland.nix
+          ./desktop/hyprpaper.nix
           ./desktop/hyprlock.nix
           ./desktop/waybar.nix
           ./desktop/wofi.nix

@@ -23,6 +23,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".wallpaper".source = ./wallpaper;
   };
 
   home.sessionVariables = {
