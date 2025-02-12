@@ -48,7 +48,7 @@
       # exec-once = nm-applet &
       # exec-once = waybar & hyprpaper &
       exec-once = waybar &
-      exec-once = hyprpaper &
+      exec-once = hyprpaper
       
       
       #############################
@@ -245,6 +245,18 @@
       bind = $mainMod, 8, workspace, 8
       bind = $mainMod, 9, workspace, 9
       bind = $mainMod, 0, workspace, 10
+
+      # And bind wallpaper to each workspace
+      bind = $mainMod, 1, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/mondstadt.jpg"
+      bind = $mainMod, 2, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/liyue.jpg" 
+      bind = $mainMod, 3, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/inazuma.jpg" 
+      bind = $mainMod, 4, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/sumeru.jpg" 
+      bind = $mainMod, 5, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/fontaine.jpg" 
+      bind = $mainMod, 6, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/mondstadt.jpg" 
+      bind = $mainMod, 7, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/liyue.jpg" 
+      bind = $mainMod, 8, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/inazuma.jpg" 
+      bind = $mainMod, 9, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/sumeru.jpg" 
+      bind = $mainMod, 0, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/fontaine.jpg" 
       
       # Move active window to a workspace with mainMod + SHIFT + [0-9]
       bind = $mainMod SHIFT, 1, movetoworkspace, 1
