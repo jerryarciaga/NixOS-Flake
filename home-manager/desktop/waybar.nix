@@ -81,7 +81,7 @@
       
       * {
         font-family: "Ubuntu Nerd Font Med";
-        font-size: 12px;
+        font-size: 16px;
         min-width: 8px;
         min-height: 0px;
         border: none;
