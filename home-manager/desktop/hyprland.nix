@@ -254,9 +254,9 @@
       bind = $mainMod, 5, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/fontaine.jpg" 
       bind = $mainMod, 6, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/jean.jpg" 
       bind = $mainMod, 7, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/fischl.jpg" 
-      bind = $mainMod, 8, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/mondstadt.jpg" 
-      bind = $mainMod, 9, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/liyue.jpg" 
-      bind = $mainMod, 0, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/inazuma.jpg" 
+      bind = $mainMod, 8, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/night.jpg" 
+      bind = $mainMod, 9, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/mondstadt.jpg" 
+      bind = $mainMod, 0, exec, hyprctl hyprpaper reload ,"~/.config/wallpaper/liyue.jpg" 
       
       # Move active window to a workspace with mainMod + SHIFT + [0-9]
       bind = $mainMod SHIFT, 1, movetoworkspace, 1
