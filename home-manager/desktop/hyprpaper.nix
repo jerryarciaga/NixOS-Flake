@@ -14,6 +14,8 @@
         "~/.config/wallpaper/inazuma.jpg"
         "~/.config/wallpaper/sumeru.jpg"
         "~/.config/wallpaper/fontaine.jpg"
+        "~/.config/wallpaper/fischl.jpg"
+        "~/.config/wallpaper/jean.jpg"
       ];
       wallpaper = [
         ", ~/.config/wallpaper/mondstadt.jpg"
