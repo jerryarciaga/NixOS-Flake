@@ -24,6 +24,7 @@
           ./home.nix
 
           # Hyprland dots
+          ./desktop/theme.nix
           ./desktop/hyprland.nix
           ./desktop/hyprpaper.nix
           ./desktop/hyprlock.nix
