@@ -4,6 +4,12 @@
   programs.hyprlock = {
     enable = true;
     extraConfig = ''
+      # Set color variables based on https://github.com/catppuccin/catppuccin
+      $color_base = rgb(1e1e2e)
+      $color_text = rgb(cdd6f4)
+      $color_green = rgb(a6e3a1)
+      $color_blue = rgb(89b4fa)
+
       # Original config submitted by https://github.com/SherLock707
       background {
         monitor =
@@ -18,11 +24,11 @@
         dots_size = 0.33 # Scale of input-field height, 0.2 - 0.8
         dots_spacing = 0.15 # Scale of dots' absolute size, 0.0 - 1.0
         dots_center = true
-        outer_color = $color5
-        inner_color = $color0
-        font_color = $color12
+        outer_color = $color_green
+        inner_color = $color_teal
+        font_color = $color_base
         font_family = HYWenHei
-        fade_on_empty = false
+        fade_on_empty = true
         placeholder_text = <i>Password...</i> # Text rendered in the input box when it's empty.
         hide_input = false
         
@@ -35,10 +41,9 @@
       label {
         monitor =
         text = cmd[update:18000000] echo "<b> "$(date +'%A, %-d %B %Y')" </b>"
-        color = $color12
+        color = $color_green
         font_size = 64
         font_family = HYWenHei
-        
         position = 0, -150
         halign = center
         valign = top
@@ -48,7 +53,7 @@
       label {
         monitor =
         text = cmd[update:1000] echo "<b><big> $(date +"%H:%M") </big></b>" # 24H
-        color = $color15
+        color = $color_green
         font_size = 64
         font_family = HYWenHei
         
@@ -61,7 +66,7 @@
       label {
         monitor =
         text =    $USER
-        color = $color12
+        color = $color_blue
         font_size = 18
         font_family = HYWenHei
         
