@@ -33,6 +33,9 @@ in
       };
 
       # Security Devices
+      SecurityDevices.Delete = {
+        "Smartcard";
+      };
       SecurityDevices.Add = {
         "Smartcard" = pkgs.opensc + "/lib/opensc-pkcs11.so";
       };
