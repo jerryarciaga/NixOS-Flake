@@ -7,8 +7,8 @@
       # Original config submitted by https://github.com/SherLock707
       background {
         monitor =
-        path = screenshot
-        blur_passes = 3
+        path = ~/.config/wallpaper/genshin_elements.jpg
+        blur_passes = 0
       }
   
       input-field {
@@ -52,9 +52,9 @@
         font_size = 64
         font_family = HYWenHei
         
-        position = 0, 0
+        position = 0, -250
         halign = center
-        valign = center
+        valign = top
       }
       
       # User
