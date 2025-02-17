@@ -21,6 +21,7 @@
         outer_color = $color5
         inner_color = $color0
         font_color = $color12
+        font_family = HYWenHei
         fade_on_empty = false
         placeholder_text = <i>Password...</i> # Text rendered in the input box when it's empty.
         hide_input = false
@@ -35,8 +36,8 @@
         monitor =
         text = cmd[update:18000000] echo "<b> "$(date +'%A, %-d %B %Y')" </b>"
         color = $color12
-        font_size = 34
-        font_family = JetBrains Mono Nerd Font 10
+        font_size = 64
+        font_family = HYWenHei
         
         position = 0, -150
         halign = center
@@ -48,8 +49,8 @@
         monitor =
         text = cmd[update:1000] echo "<b><big> $(date +"%H:%M") </big></b>" # 24H
         color = $color15
-        font_size = 94
-        font_family = JetBrains Mono Nerd Font 10
+        font_size = 64
+        font_family = HYWenHei
         
         position = 0, 0
         halign = center
@@ -62,7 +63,7 @@
         text =    $USER
         color = $color12
         font_size = 18
-        font_family = Inter Display Medium
+        font_family = HYWenHei
         
         position = 0, 100
         halign = center
