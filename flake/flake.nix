@@ -38,6 +38,17 @@
   {
     nixosConfigurations = {
 
+      # Latte | Lenovo Yoga 7 2-in-1 16IML9
+      latte = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = defaultModules ++ [
+          ./host/latte/hostname.nix
+          ./host/latte/hardware-configuration.nix
+          ./modules/intel_graphics.nix
+        ];
+      };
+
       # Cappuccino | Dell Optiplex Tower 7010
       cappuccino = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
