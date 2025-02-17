@@ -233,6 +233,9 @@
       bind = $mainMod SHIFT, J, movewindow, d
       bind = $mainMod SHIFT, K, movewindow, u
       bind = $mainMod SHIFT, L, movewindow, r
+
+      # Fullscreen
+      bind = $mainMode, F, fullscreen
       
       # Switch workspaces with mainMod + [0-9]
       bind = $mainMod, 1, workspace, 1
