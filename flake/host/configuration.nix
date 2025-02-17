@@ -12,6 +12,13 @@
     "flakes"
   ];
 
+  # If you are experiencing timeouts due to slow internet (curl error 200),
+  # the default setting for stalled-download-timeout may prevent
+  # you from installing your packages. If this happens, uncomment the
+  # following line, increase the default setting then run the install
+  # command again.
+  # nix.settings.stalled-download-timeout = 300;
+
   # Bootloader.
 	boot = {
     loader = {
