@@ -28,21 +28,7 @@
         };
 
         "clock" = {
-          "format" = "{:%H\n%M\n\n%d\n%b}";
-          "tooltip-format" = "<tt><small>{calendar}</small></tt>";
-          "calendar" =  {
-            "mode"          = "year";
-            "mode-mon-col"  = 3;
-            "weeks-pos"     = "right";
-            "on-scroll"     = 1;
-            "format" = {
-              "months" =     "<span color='#ffead3'><b>{}</b></span>";
-              "days" =       "<span color='#ecc6d9'><b>{}</b></span>";
-              "weeks" =      "<span color='#99ffdd'><b>W{}</b></span>";
-              "weekdays" =   "<span color='#ffcc66'><b>{}</b></span>";
-              "today" =      "<span color='#ff6699'><b><u>{}</u></b></span>";
-            };
-          };
+          "format" = "{:%H\n%M\n󰃰\n%d\n%b}";
           #"format-alt" = "{%H\n%M\n%a\n%d\n%b}";
         };
 
@@ -50,10 +36,29 @@
           "bat" = "BAT0";
           "interval" = 60;
           "states" = {
-            "warning" = 30;
+            "full" = 100;
+            "95" = 95;
+            "90" = 90;
+            "80" = 80;
+            "70" = 70;
+            "60" = 60;
+            "50" = 50;
+            "40" = 40;
+            "30" = 30;
+            "20" = 20;
             "critical" = 15;
           };
-          "format" = "{capacity}%";
+          "format-full" = "󰁹";
+          "format-95" = "󰁹 {capacity}";
+          "format-90" = "󰂂 {capacity}";
+          "format-80" = "󰂁 {capacity}";
+          "format-70" = "󰂀 {capacity}";
+          "format-60" = "󰁿 {capacity}";
+          "format-50" = "󰁾 {capacity}";
+          "format-40" = "󰁽 {capacity}";
+          "format-30" = "󰁼 {capacity}";
+          "format-20" = "󰁻 {capacity}";
+          "format-critical" = "󰂃 {capacity}";
         };
 
       };
@@ -91,7 +96,7 @@
         @define-color ctp-mocha-crust #11111b;
       
       * {
-        font-family: "HYWenHei";
+        font-family: "HYWenHei, Symbols Nerd Font";
         font-size: 16px;
         min-width: 8px;
         min-height: 0px;
