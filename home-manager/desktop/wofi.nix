@@ -6,11 +6,12 @@
     enable = true;
     settings = {
       location = "center";
+      insensitive = true;
       width = 250;
     };
     style = ''
       * {
-      	font-family: "Gyre Adventor", sans;
+      	font-family: "Ubuntu Nerd Font Med", sans;
       }
       
       window {
