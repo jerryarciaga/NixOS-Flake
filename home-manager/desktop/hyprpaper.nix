@@ -17,6 +17,8 @@
         "~/.config/wallpaper/fischl.jpg"
         "~/.config/wallpaper/jean.jpg"
         "~/.config/wallpaper/night.jpg"
+        "~/.config/wallpaper/waning_sun.jpg"
+        "~/.config/wallpaper/waxing_moon.jpg"
       ];
       wallpaper = [
         ", ~/.config/wallpaper/mondstadt.jpg"
