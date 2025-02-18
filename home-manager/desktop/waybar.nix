@@ -54,7 +54,6 @@
             "critical" = 15;
           };
           "format" = "{capacity}%";
-          "max-length" = 25;
         };
 
       };
