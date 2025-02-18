@@ -18,6 +18,7 @@
         ];
         modules-right = [
           "backlight"
+          "pulseaudio/slider"
           "pulseaudio"
           "battery"
         ];
@@ -30,6 +31,24 @@
         "clock" = {
           "format" = "{:%H\n%M\n󰃰\n%d\n%b}";
           #"format-alt" = "{%H\n%M\n%a\n%d\n%b}";
+        };
+
+        "pulseaudio/slider" = {
+          "min" = 0;
+          "max" = 100;
+          "orientation" = "vertical";
+        };
+        "pulseaudio" = {
+          "states" = {
+            "100" = 100;
+            "75" = 75;
+            "50" = 50;
+            "0" = 0;
+          };
+          "format-100" = "";
+          "format-75" = "";
+          "format-50" = "";
+          "format-0" = "";
         };
 
         "battery" = {
@@ -146,6 +165,25 @@
         color: @ctp-mocha-yellow;
       }
 
+      #pulseaudio-slider slider {
+        min-height: 0px;
+        min-width: 0px;
+        opacity: 0;
+        background-image: none;
+        border: none;
+        box-shadow: none;
+      }
+      #pulseaudio-slider trough {
+        min-height: 80px;
+        min-width: 10px;
+        border-radius: 5px;
+        background-color: @ctp-mocha-base;
+      }
+      #pulseaudio-slider highlight {
+        min-width: 10px;
+        border-radius: 5px;
+        background-color: green;
+      }
       #pulseaudio {
         border-radius: 4px;
         background: @ctp-mocha-surface0;
