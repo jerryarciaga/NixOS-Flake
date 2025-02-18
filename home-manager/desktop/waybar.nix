@@ -19,6 +19,7 @@
         modules-right = [
           "backlight"
           "pulseaudio"
+          "battery"
         ];
 
         "hyprland/workspaces" = {
@@ -43,6 +44,17 @@
             };
           };
           #"format-alt" = "{%H\n%M\n%a\n%d\n%b}";
+        };
+
+        "battery" = {
+          "bat" = "BAT0";
+          "interval" = 60;
+          "states" = {
+            "warning" = 30;
+            "critical" = 15;
+          };
+          "format" = "{capacity}%";
+          "max-length" = 25;
         };
 
       };
@@ -136,6 +148,11 @@
         color: @ctp-mocha-sapphire;
       }
 
+      #battery {
+        border-radius: 4px;
+        background: @ctp-mocha-surface0;
+        color: @ctp-mocha-sapphire;
+      }
     '';
   };
 
