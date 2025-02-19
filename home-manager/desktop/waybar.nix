@@ -43,11 +43,13 @@
             "100" = 100;
             "75" = 75;
             "50" = 50;
+            "25" = 25;
             "0" = 0;
           };
           "format-100" = "";
-          "format-75" = "";
-          "format-50" = "";
+          "format-75" = "";
+          "format-50" = "";
+          "format-25" = "";
           "format-0" = "";
         };
 
@@ -174,7 +176,7 @@
         box-shadow: none;
       }
       #pulseaudio-slider trough {
-        min-height: 80px;
+        min-height: 100px;
         min-width: 10px;
         border-radius: 5px;
         background-color: @ctp-mocha-base;
@@ -182,12 +184,12 @@
       #pulseaudio-slider highlight {
         min-width: 10px;
         border-radius: 5px;
-        background-color: green;
+        background: @ctp-mocha-green;
       }
       #pulseaudio {
         border-radius: 4px;
         background: @ctp-mocha-surface0;
-        color: @ctp-mocha-sapphire;
+        color: @ctp-mocha-green;
       }
 
       #battery {
