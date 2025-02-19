@@ -48,7 +48,7 @@
       # exec-once = nm-applet &
       # exec-once = waybar & hyprpaper &
       exec-once = waybar &
-      exec-once = hyprpaper
+      exec-once = hyprpaper &
       
       
       #############################
@@ -107,7 +107,7 @@
           blur {
               enabled = true
               size = 3
-              passes = 1
+              passes = 2
       
               vibrancy = 0.1696
           }
