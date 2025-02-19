@@ -189,12 +189,12 @@
       #pulseaudio {
         border-radius: 4px;
         color: @ctp-mocha-green;
+        background-color: transparent;
       }
 
       #battery {
         border-radius: 4px;
-        background: @ctp-mocha-surface0;
-        color: @ctp-mocha-sapphire;
+        background-color: transparent;
       }
     '';
   };
