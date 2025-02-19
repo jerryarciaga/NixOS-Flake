@@ -188,7 +188,6 @@
       }
       #pulseaudio {
         border-radius: 4px;
-        background: @ctp-mocha-surface0;
         color: @ctp-mocha-green;
       }
 
