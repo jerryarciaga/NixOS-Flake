@@ -9,18 +9,17 @@
         layer = "top";
         position = "left";
         width = 40;
+        spacing = 2;
         modules-left = [ 
           "hyprland/workspaces"
           "tray"
-        ];
-        modules-center = [
-          "clock"
         ];
         modules-right = [
           "backlight/slider"
           "backlight"
           "pulseaudio/slider"
           "pulseaudio"
+          "clock"
           "battery#icon"
           "battery#percent"
         ];
@@ -29,12 +28,6 @@
           active-only = false;
           all-outputs = true;
         };
-
-        "clock" = {
-          "format" = "{:%H\n%M\n󰃰\n%d\n%b}";
-          #"format-alt" = "{%H\n%M\n%a\n%d\n%b}";
-        };
-
 
         "backlight/slider" = {
           "min" = 0;
@@ -63,6 +56,10 @@
           "format-50" = "";
           "format-25" = "";
           "format-0" = "";
+        };
+
+        "clock" = {
+          "format" = "󰃰";
         };
 
         "battery#icon" = {
@@ -190,7 +187,7 @@
       }
 
       #clock {
-        background: @ctp-mocha-surface0;
+        background: transparent;
         color: @ctp-mocha-sky;
       }
 
