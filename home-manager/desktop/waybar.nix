@@ -8,7 +8,7 @@
       mainBar = {
         layer = "top";
         position = "left";
-        width = 10;
+        width = 40;
         modules-left = [ 
           "hyprland/workspaces"
           "tray"
@@ -17,6 +17,7 @@
           "clock"
         ];
         modules-right = [
+          "backlight/slider"
           "backlight"
           "pulseaudio/slider"
           "pulseaudio"
@@ -32,6 +33,16 @@
         "clock" = {
           "format" = "{:%H\n%M\n󰃰\n%d\n%b}";
           #"format-alt" = "{%H\n%M\n%a\n%d\n%b}";
+        };
+
+
+        "backlight/slider" = {
+          "min" = 0;
+          "max" = 100;
+          "orientation" = "vertical";
+        };
+        "backlight" = {
+          "format" = "";
         };
 
         "pulseaudio/slider" = {
@@ -183,9 +194,28 @@
         color: @ctp-mocha-sky;
       }
 
+      #backlight-slider slider {
+        min-height: 0px;
+        min-width: 0px;
+        opacity: 0;
+        background-image: none;
+        border: none;
+        box-shadow: none;
+      }
+      #backlight-slider trough {
+        min-height: 80px;
+        min-width: 10px;
+        border-radius: 5px;
+        background-color: @ctp-mocha-base;
+      }
+      #backlight-slider highlight {
+        min-width: 10px;
+        border-radius: 5px;
+        background: @ctp-mocha-yellow;
+      }
       #backlight {
         border-radius: 4px;
-        background: @ctp-mocha-surface0;
+        background: transparent;
         color: @ctp-mocha-yellow;
       }
 
@@ -198,7 +228,7 @@
         box-shadow: none;
       }
       #pulseaudio-slider trough {
-        min-height: 100px;
+        min-height: 80px;
         min-width: 10px;
         border-radius: 5px;
         background-color: @ctp-mocha-base;
