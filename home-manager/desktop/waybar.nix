@@ -20,8 +20,7 @@
           "pulseaudio/slider"
           "pulseaudio"
           "clock"
-          "battery#icon"
-          "battery#percent"
+          "battery"
         ];
 
         "hyprland/workspaces" = {
@@ -60,11 +59,15 @@
 
         "clock" = {
           "format" = "󰃰";
+          "tooltip" = true;
+          "tooltip-format" = "{:%R %e %B %Y}";
         };
 
-        "battery#icon" = {
+        "battery" = {
           "bat" = "BAT0";
           "interval" = 30;
+          "tooltip" = true;
+          "tooltip-format" = "{capacity}% {time}";
           "states" = {
             "full" = 100;
             "95" = 95;
@@ -99,17 +102,6 @@
           "format-charging-30" = "󰂇";
           "format-charging-20" = "󰂆";
           "format-charging-critical" = "󰢜";
-        };
-        "battery#percent" = {
-          "states" = {
-            "full" = 100;
-            "full-discharging-95" = 95;
-            "full-charging-95" = 95;
-          };
-          "format-full" = "";
-          "format-charging-95" = "";
-          "format-discharging-95" = "{capacity}";
-          "format" = "{capacity}";
         };
 
       };
@@ -241,12 +233,7 @@
         background-color: transparent;
       }
 
-      #battery.icon {
-        border-radius: 4px;
-        color: @ctp-mocha-lavender;
-        background-color: transparent;
-      }
-      #battery.percent {
+      #battery {
         border-radius: 4px;
         color: @ctp-mocha-lavender;
         background-color: transparent;
