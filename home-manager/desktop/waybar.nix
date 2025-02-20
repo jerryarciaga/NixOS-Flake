@@ -20,7 +20,8 @@
           "backlight"
           "pulseaudio/slider"
           "pulseaudio"
-          "battery"
+          "battery#icon"
+          "battery#percent"
         ];
 
         "hyprland/workspaces" = {
@@ -53,9 +54,9 @@
           "format-0" = "";
         };
 
-        "battery" = {
+        "battery#icon" = {
           "bat" = "BAT0";
-          "interval" = 60;
+          "interval" = 30;
           "states" = {
             "full" = 100;
             "95" = 95;
@@ -70,16 +71,37 @@
             "critical" = 15;
           };
           "format-full" = "󰁹";
-          "format-95" = "󰁹 {capacity}";
-          "format-90" = "󰂂 {capacity}";
-          "format-80" = "󰂁 {capacity}";
-          "format-70" = "󰂀 {capacity}";
-          "format-60" = "󰁿 {capacity}";
-          "format-50" = "󰁾 {capacity}";
-          "format-40" = "󰁽 {capacity}";
-          "format-30" = "󰁼 {capacity}";
-          "format-20" = "󰁻 {capacity}";
-          "format-critical" = "󰂃 {capacity}";
+          "format-discharging-95" = "󰁹";
+          "format-discharging-90" = "󰂂";
+          "format-discharging-80" = "󰂁";
+          "format-discharging-70" = "󰂀";
+          "format-discharging-60" = "󰁿";
+          "format-discharging-50" = "󰁾";
+          "format-discharging-40" = "󰁽";
+          "format-discharging-30" = "󰁼";
+          "format-discharging-20" = "󰁻";
+          "format-discharging-critical" = "󰂃";
+          "format-charging-95" = "󰂅";
+          "format-charging-90" = "󰂋";
+          "format-charging-80" = "󰂊";
+          "format-charging-70" = "󰢞";
+          "format-charging-60" = "󰂉";
+          "format-charging-50" = "󰢝";
+          "format-charging-40" = "󰂈";
+          "format-charging-30" = "󰂇";
+          "format-charging-20" = "󰂆";
+          "format-charging-critical" = "󰢜";
+        };
+        "battery#percent" = {
+          "states" = {
+            "full" = 100;
+            "full-discharging-95" = 95;
+            "full-charging-95" = 95;
+          };
+          "format-full" = "";
+          "format-charging-95" = "";
+          "format-discharging-95" = "{capacity}";
+          "format" = "{capacity}";
         };
 
       };
@@ -192,8 +214,14 @@
         background-color: transparent;
       }
 
-      #battery {
+      #battery.icon {
         border-radius: 4px;
+        color: @ctp-mocha-lavender;
+        background-color: transparent;
+      }
+      #battery.percent {
+        border-radius: 4px;
+        color: @ctp-mocha-lavender;
         background-color: transparent;
       }
     '';
