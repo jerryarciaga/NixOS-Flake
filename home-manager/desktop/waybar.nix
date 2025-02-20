@@ -151,6 +151,13 @@
         margin: 0px 0px;
       }
 
+      tooltip {
+        background: alpha(@ctp-mocha-surface0, 0.9);
+      }
+      tooltip label {
+        color: @ctp-mocha-text;
+      }
+
       window#waybar {
         transition-property: background-color;
         transition-duration: 0.5s;
