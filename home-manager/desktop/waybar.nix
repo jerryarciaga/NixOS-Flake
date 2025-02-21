@@ -24,8 +24,15 @@
         ];
 
         "hyprland/workspaces" = {
-          active-only = false;
-          all-outputs = true;
+          "active-only" = false;
+          "all-outputs" = false;
+          "persistent-workspaces" = {
+            "1" = [];
+            "2" = [];
+            "3" = [];
+            "4" = [];
+            "5" = [];
+          };
         };
 
         "backlight/slider" = {
@@ -165,24 +172,25 @@
         background: @background;
       }
 
-      #workspaces button.active {
-        background: @ctp-mocha-surface0;
-        color: @ctp-mocha-blue;
-      }
-
       window#waybar.visible {
         background: @ctp-mocha-surface0;
         color: @ctp-mocha-teal;
       }
 
-      #workspaces.empty {
+      #workspaces {
         background: @ctp-mocha-surface0;
-        color: @ctp-mocha-teal;
+        color: @ctp-mocha-blue;
+        opacity: 0.90;
       }
-
+      #workspaces button.active {
+        background: @ctp-mocha-base;
+        color: @ctp-mocha-blue;
+        opacity: 0.90;
+      }
       #workspaces.urgent {
         background: @ctp-mocha-red;
         color: @ctp-mocha-teal;
+        opacity: 0.90;
       }
 
       #clock {
