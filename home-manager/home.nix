@@ -18,6 +18,7 @@
 
     # Custom fonts
     ".local/share/fonts/zh-cn.ttf".source = ./fonts/zh-cn.ttf;
+    ".local/share/fonts/Genshin_Elements.ttf".source = ./fonts/Genshin_Elements.ttf;
   };
 
   home.sessionVariables = {

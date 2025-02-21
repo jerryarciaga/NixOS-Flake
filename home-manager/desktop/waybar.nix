@@ -26,6 +26,14 @@
         "hyprland/workspaces" = {
           "active-only" = false;
           "all-outputs" = false;
+          "format" = "{icon}";
+          "format-icons" = {
+            "1" = "󱬀";
+            "2" = "󱬄";
+            "3" = "󱬃";
+            "4" = "󱬂";
+            "5" = "󱬅";
+          };
           "persistent-workspaces" = {
             "1" = [];
             "2" = [];
@@ -146,7 +154,7 @@
         @define-color ctp-mocha-crust #11111b;
       
       * {
-        font-family: "HYWenHei, Symbols Nerd Font";
+        font-family: "HYWenHei, Symbols Nerd Font, Genshin_Elements";
         font-size: 16px;
         min-width: 8px;
         min-height: 0px;
@@ -180,17 +188,17 @@
       #workspaces {
         background: @ctp-mocha-surface0;
         color: @ctp-mocha-blue;
-        opacity: 0.90;
+        opacity: 0.95;
       }
       #workspaces button.active {
         background: @ctp-mocha-base;
         color: @ctp-mocha-blue;
-        opacity: 0.90;
+        opacity: 0.95;
       }
       #workspaces.urgent {
         background: @ctp-mocha-red;
         color: @ctp-mocha-teal;
-        opacity: 0.90;
+        opacity: 0.95;
       }
 
       #clock {
