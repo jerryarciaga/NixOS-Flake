@@ -73,9 +73,9 @@
         };
 
         "clock" = {
-          "format" = "󰃰";
+          "format" = "<span font_family='Cascadia Mono NF'>{:%H%n%M}</span>";
           "tooltip" = true;
-          "tooltip-format" = "{:%R %e %B %Y}";
+          "tooltip-format" = "{:%e %B %Y}";
         };
 
         "battery" = {
