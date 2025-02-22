@@ -186,12 +186,12 @@
       }
 
       #workspaces {
-        background: @ctp-mocha-surface0;
+        background: @ctp-mocha-crust;
         color: @ctp-mocha-blue;
         opacity: 0.95;
       }
       #workspaces button.active {
-        background: @ctp-mocha-base;
+        background: @ctp-mocha-surface0;
         color: @ctp-mocha-blue;
         opacity: 0.95;
       }
