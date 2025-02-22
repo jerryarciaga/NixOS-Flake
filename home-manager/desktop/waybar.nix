@@ -28,11 +28,11 @@
           "all-outputs" = false;
           "format" = "{icon}";
           "format-icons" = {
-            "1" = "󱬀";
-            "2" = "󱬄";
-            "3" = "󱬃";
-            "4" = "󱬂";
-            "5" = "󱬅";
+            "1" = "<span foreground='#94e2d5'>󱬀</span>";
+            "2" = "<span foreground='#f9e2af'>󱬄</span>";
+            "3" = "<span foreground='#cba6f7'>󱬃</span>";
+            "4" = "<span foreground='#a6e3a1'>󱬂</span>";
+            "5" = "<span foreground='#89b4fa'>󱬅</span>";
           };
           "persistent-workspaces" = {
             "1" = [];
@@ -194,8 +194,7 @@
         opacity: 0.95;
       }
       #workspaces button.active {
-        background: @ctp-mocha-surface0;
-        color: @ctp-mocha-blue;
+        background: @ctp-mocha-base;
         opacity: 0.95;
       }
       #workspaces.urgent {
