@@ -179,10 +179,13 @@
         border-radius: 8px;
         background: @background;
       }
-
       window#waybar.visible {
         background: @ctp-mocha-surface0;
         color: @ctp-mocha-teal;
+      }
+
+      .modules-right {
+        background: @ctp-mocha-crust;
       }
 
       #workspaces {
