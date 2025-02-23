@@ -10,7 +10,7 @@
     flatpak
     slurp
     grim
-    nautilus
+    xfce.thunar
   ];
 
   home.file = {
