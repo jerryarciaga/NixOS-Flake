@@ -28,11 +28,13 @@
           "all-outputs" = false;
           "format" = "{icon}";
           "format-icons" = {
-            "1" = "<span foreground='#94e2d5'>󱬀</span>";
-            "2" = "<span foreground='#f9e2af'>󱬄</span>";
-            "3" = "<span foreground='#cba6f7'>󱬃</span>";
-            "4" = "<span foreground='#a6e3a1'>󱬂</span>";
-            "5" = "<span foreground='#89b4fa'>󱬅</span>";
+            "1" = "<span foreground='#f38ba8'>󱬆</span>";
+            "2" = "<span foreground='#89b4fa'>󱬅</span>";
+            "3" = "<span foreground='#94e2d5'>󱬀</span>";
+            "4" = "<span foreground='#cba6f7'>󱬃</span>";
+            "5" = "<span foreground='#a6e3a1'>󱬂</span>";
+            "6" = "<span foreground='#89dceb'>󱬁</span>";
+            "7" = "<span foreground='#f9e2af'>󱬄</span>";
           };
           "persistent-workspaces" = {
             "1" = [];
@@ -40,6 +42,8 @@
             "3" = [];
             "4" = [];
             "5" = [];
+            "6" = [];
+            "7" = [];
           };
         };
 
