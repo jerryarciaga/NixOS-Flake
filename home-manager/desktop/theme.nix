@@ -1,11 +1,14 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-  gtk = {
+  catppuccin.gtk = {
     enable = true;
-    theme = {
-      name = "Materia-dark";
-      package = pkgs.materia-theme;
+    flavor = "mocha";
+    accent = "blue";
+    icon = {
+      enable = true;
+      accent = "blue";
+      flavor = "mocha";
     };
   };
 }

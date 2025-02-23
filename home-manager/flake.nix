@@ -8,9 +8,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, catppuccin, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -30,6 +34,9 @@
           ./desktop/hyprlock.nix
           ./desktop/waybar.nix
           ./desktop/wofi.nix
+
+          # Theme
+          catppuccin.homeManagerModules.catppuccin
 
           # App configs
           ./modules/alacritty.nix

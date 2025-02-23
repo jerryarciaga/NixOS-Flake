@@ -10,6 +10,7 @@
     flatpak
     slurp
     grim
+    nautilus
   ];
 
   home.file = {
