@@ -156,15 +156,15 @@
       /*
         Set waybar colors here
       */
-        @define-color bar-background #0C314B;
-        @define-color base #616C6E;
-        @define-color tooltip-background #616C6E;
-        @define-color text #C4E5DE;
+        @define-color bar-background @ctp-mocha-crust;
+        @define-color base @ctp-mocha-base;
+        @define-color tooltip-background @ctp-mocha-surface0;
+        @define-color text @ctp-mocha-text;
         @define-color urgent @ctp-mocha-red;
-        @define-color backlight @text;
-        @define-color volume @text;
-        @define-color clock @text;
-        @define-color battery @text;
+        @define-color backlight @ctp-mocha-yellow;
+        @define-color volume @ctp-mocha-green;
+        @define-color clock @ctp-mocha-sky;
+        @define-color battery @ctp-mocha-lavender;
       
       * {
         font-family: "HYWenHei, Symbols Nerd Font, Genshin_Elements";
