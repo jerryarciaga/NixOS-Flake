@@ -5,6 +5,7 @@
     yubikey-manager
     yubioath-flutter
     yubico-piv-tool
+    libfido2
   ];
 
   services = {
