@@ -9,10 +9,10 @@
     settings = {
       ipc = "off";
       preload = [
-        "~/.config/wallpaper/fontaine.jpg"
+        "~/.config/wallpaper/seven_elements_catpuccin.jpg"
       ];
       wallpaper = [
-        ", ~/.config/wallpaper/fontaine.jpg"
+        ", ~/.config/wallpaper/seven_elements_catpuccin.jpg"
       ];
     };
   };
