@@ -152,6 +152,19 @@
         @define-color ctp-mocha-base #1e1e2e;
         @define-color ctp-mocha-mantle #181825;
         @define-color ctp-mocha-crust #11111b;
+
+      /*
+        Set waybar colors here
+      */
+        @define-color bar-background @ctp-mocha-crust;
+        @define-color base @ctp-mocha-base;
+        @define-color tooltip-background @ctp-mocha-surface0;
+        @define-color text @ctp-mocha-text;
+        @define-color urgent @ctp-mocha-red;
+        @define-color backlight @ctp-mocha-yellow;
+        @define-color volume @ctp-mocha-green;
+        @define-color clock @ctp-mocha-sky;
+        @define-color battery @ctp-mocha-lavender;
       
       * {
         font-family: "HYWenHei, Symbols Nerd Font, Genshin_Elements";
@@ -167,10 +180,10 @@
       }
 
       tooltip {
-        background: alpha(@ctp-mocha-surface0, 0.9);
+        background: alpha(@tooltip-background, 0.9);
       }
       tooltip label {
-        color: @ctp-mocha-text;
+        color: @text;
       }
 
       window#waybar {
@@ -180,32 +193,30 @@
         background: @background;
       }
       window#waybar.visible {
-        background: @ctp-mocha-surface0;
-        color: @ctp-mocha-teal;
+        background: @tooltip-background;
       }
 
       .modules-right {
-        background: @ctp-mocha-crust;
+        background: @bar-background;
       }
 
       #workspaces {
-        background: @ctp-mocha-crust;
-        color: @ctp-mocha-blue;
+        background: @bar-background;
         opacity: 0.95;
       }
       #workspaces button.active {
-        background: @ctp-mocha-base;
+        background: @base;
         opacity: 0.95;
       }
       #workspaces.urgent {
-        background: @ctp-mocha-red;
-        color: @ctp-mocha-teal;
+        background: @urgent;
+        color: @text;
         opacity: 0.95;
       }
 
       #clock {
         background: transparent;
-        color: @ctp-mocha-sky;
+        color: @clock;
       }
 
       #backlight-slider slider {
@@ -220,17 +231,17 @@
         min-height: 80px;
         min-width: 10px;
         border-radius: 5px;
-        background-color: @ctp-mocha-base;
+        background-color: @base;
       }
       #backlight-slider highlight {
         min-width: 10px;
         border-radius: 5px;
-        background: @ctp-mocha-yellow;
+        background: @backlight;
       }
       #backlight {
         border-radius: 4px;
         background: transparent;
-        color: @ctp-mocha-yellow;
+        color: @backlight;
       }
 
       #pulseaudio-slider slider {
@@ -245,22 +256,22 @@
         min-height: 80px;
         min-width: 10px;
         border-radius: 5px;
-        background-color: @ctp-mocha-base;
+        background-color: @base;
       }
       #pulseaudio-slider highlight {
         min-width: 10px;
         border-radius: 5px;
-        background: @ctp-mocha-green;
+        background: @volume;
       }
       #pulseaudio {
         border-radius: 4px;
-        color: @ctp-mocha-green;
+        color: @volume;
         background-color: transparent;
       }
 
       #battery {
         border-radius: 4px;
-        color: @ctp-mocha-lavender;
+        color: @battery;
         background-color: transparent;
       }
     '';
