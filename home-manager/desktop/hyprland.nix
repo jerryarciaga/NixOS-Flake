@@ -152,7 +152,7 @@
       # windowrulev2 = rounding 0, floating:0, onworkspace:w[tv1]
       # windowrulev2 = bordersize 0, floating:0, onworkspace:f[1]
       # windowrulev2 = rounding 0, floating:0, onworkspace:f[1]
-      
+
       # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
       dwindle {
           pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
@@ -278,6 +278,9 @@
 
       # Bind Hyprland-related apps
       bind = $mainMod CTRL, S, exec, hyprlock
+
+      # Bind screenshot
+      bind = $mainMod CTRL SHIFT, S, exec, cd "$HOME/Pictures/0. Screenshots"; grim
 
       # Bind apps
       bind = $mainMod, B, exec, firefox
