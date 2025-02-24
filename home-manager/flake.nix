@@ -12,9 +12,19 @@
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixneovimplugins = {
+      url = "github:NixNeovim/NixNeovimPlugins";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, catppuccin, ... }:
+  outputs = {
+    nixpkgs,
+    home-manager,
+    catppuccin,
+    nixneovimplugins,
+    ...
+  } @inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -47,8 +57,11 @@
           ./modules/fonts.nix
         ];
 
-        # Optionally use extraSpecialArgs
+        # Use extraSpecialArgs
         # to pass through arguments to home.nix
+        extraSpecialArgs = {
+          inherit inputs;
+        };
       };
     };
 }
