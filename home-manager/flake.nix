@@ -41,7 +41,6 @@
           # App configs
           ./modules/alacritty.nix
           ./modules/git.nix
-          ./modules/vim.nix
           ./modules/neovim.nix
           ./modules/zathura.nix
           ./modules/firefox.nix

@@ -4,6 +4,8 @@
 
   programs.neovim = {
     enable = true;
+    viAlias = true;
+    vimAlias = true;
     plugins = with pkgs.vimPlugins; [ vim-airline ];
     extraConfig = ''
       set mouse=a
