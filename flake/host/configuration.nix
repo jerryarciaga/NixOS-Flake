@@ -75,6 +75,9 @@
     videoDrivers = [ "modesetting" ];
   };
 
+  # Flatpak
+  services.flatpak.enable = true;
+
   # GNUPG
   programs.gnupg.agent = {
     enable = true;

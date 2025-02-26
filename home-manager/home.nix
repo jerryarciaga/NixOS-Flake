@@ -14,6 +14,13 @@
   ];
 
   home.file = {
+    ".profile" = {
+      text = ''
+        . "${config.home.profileDirectory}/etc/profile.d/hm-session-vars.sh"
+      '';
+    };
+
+
     # Use wallpaper for desktop/hyprpaper.nix
     ".config/wallpaper".source = ./wallpaper;
 
@@ -24,6 +31,14 @@
 
   home.sessionVariables = {
     EDITOR = "vim";
+  };
+
+  # Allow Flatpak applications to run via desktop launcher (wofi).
+  xdg = {
+    enable = true;
+    systemDirs.data = [
+      "${config.home.homeDirectory}/.local/share/flatpak/exports/share"
+    ];
   };
 
   # Let Home Manager install and manage itself.
