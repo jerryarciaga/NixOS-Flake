@@ -2,6 +2,14 @@
 
 {
 
+  # Make wofi detect flatpak applications
+  xdg = {
+    enable = true;
+    systemDirs.data = [
+      "${config.home.homeDirectory}/.local/share/flatpak/exports/share"
+    ];
+  };
+
   programs.wofi = {
     enable = true;
     settings = {
@@ -11,7 +19,7 @@
     };
     style = ''
       * {
-      	font-family: "Ubuntu Nerd Font Med", sans;
+      	font-family: "HYWenHei", sans;
       }
       
       window {
