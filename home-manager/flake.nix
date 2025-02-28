@@ -13,7 +13,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixneovimplugins = {
-      url = "github:NixNeovim/NixNeovimPlugins";
+      # Use fork temporarily until issue is resolved
+      #   https://github.com/NixNeovim/NixNeovimPlugins/issues/124
+      # Pull request submitted
+      #   https://github.com/NixNeovim/NixNeovimPlugins/pull/127
+      # url = "github:NixNeovim/NixNeovimPlugins";
+      url = "github:jerryarciaga/NixNeovimPlugins/fix-clashes";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
