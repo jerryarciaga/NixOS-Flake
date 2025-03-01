@@ -18,6 +18,38 @@
       width = 250;
     };
     style = ''
+      /*
+        Catpuccin Mocha Color pallette
+        https://unpkg.com/@catppuccin/palette@1.7.1/css/catppuccin.css
+      */
+
+      @define-color ctp-mocha-rosewater #f5e0dc;
+      @define-color ctp-mocha-flamingo #f2cdcd;
+      @define-color ctp-mocha-pink #f5c2e7;
+      @define-color ctp-mocha-mauve #cba6f7;
+      @define-color ctp-mocha-red #f38ba8;
+      @define-color ctp-mocha-maroon #eba0ac;
+      @define-color ctp-mocha-peach #fab387;
+      @define-color ctp-mocha-yellow #f9e2af;
+      @define-color ctp-mocha-green #a6e3a1;
+      @define-color ctp-mocha-teal #94e2d5;
+      @define-color ctp-mocha-sky #89dceb;
+      @define-color ctp-mocha-sapphire #74c7ec;
+      @define-color ctp-mocha-blue #89b4fa;
+      @define-color ctp-mocha-lavender #b4befe;
+      @define-color ctp-mocha-text #cdd6f4;
+      @define-color ctp-mocha-subtext1 #bac2de;
+      @define-color ctp-mocha-subtext0 #a6adc8;
+      @define-color ctp-mocha-overlay2 #9399b2;
+      @define-color ctp-mocha-overlay1 #7f849c;
+      @define-color ctp-mocha-overlay0 #6c7086;
+      @define-color ctp-mocha-surface2 #585b70;
+      @define-color ctp-mocha-surface1 #45475a;
+      @define-color ctp-mocha-surface0 #313244;
+      @define-color ctp-mocha-base #1e1e2e;
+      @define-color ctp-mocha-mantle #181825;
+      @define-color ctp-mocha-crust #11111b;
+
       * {
       	font-family: "HYWenHei", sans;
       }
