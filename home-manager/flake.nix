@@ -12,13 +12,8 @@
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixneovimplugins = {
-      # Use fork temporarily until issue is resolved
-      #   https://github.com/NixNeovim/NixNeovimPlugins/issues/124
-      # Pull request submitted
-      #   https://github.com/NixNeovim/NixNeovimPlugins/pull/127
-      # url = "github:NixNeovim/NixNeovimPlugins";
-      url = "github:jerryarciaga/NixNeovimPlugins/fix-clashes";
+    nixneovim = {
+      url = "github:nixneovim/nixneovim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -27,7 +22,7 @@
     nixpkgs,
     home-manager,
     catppuccin,
-    nixneovimplugins,
+    nixneovim,
     ...
   } @inputs:
     let
@@ -60,6 +55,9 @@
           ./modules/zathura.nix
           ./modules/firefox.nix
           ./modules/fonts.nix
+
+          # Plugins
+          nixneovim.nixosModules.default
         ];
 
         # Use extraSpecialArgs
