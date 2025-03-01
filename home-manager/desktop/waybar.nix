@@ -172,8 +172,8 @@
       
       * {
         font-family: "HYWenHei, Symbols Nerd Font, Genshin_Elements";
-        font-size: 16px;
-        min-width: 8px;
+        font-size: 24px;
+        min-width: 16px;
         min-height: 0px;
         border: none;
         border-radius: 8px;

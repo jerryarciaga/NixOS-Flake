@@ -22,7 +22,7 @@
       ################
       
       # See https://wiki.hyprland.org/Configuring/Monitors/
-      monitor=,preferred,auto,auto
+      monitor=,preferred,auto,1.0
 
       # https://github.com/hyprwm/Hyprland/discussions/7923
       xwayland {
