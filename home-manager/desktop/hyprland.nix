@@ -23,6 +23,12 @@
       
       # See https://wiki.hyprland.org/Configuring/Monitors/
       monitor=,preferred,auto,auto
+
+      # https://github.com/hyprwm/Hyprland/discussions/7923
+      xwayland {
+        force_zero_scaling = true;
+      }
+
       
       
       ###################
