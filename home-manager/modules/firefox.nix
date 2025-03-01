@@ -67,7 +67,7 @@ in
       };
 
       Preferences = { 
-          "layout.css.devPixelsPerPx" = 1.50;
+          "layout.css.devPixelsPerPx" = "-1.0";
           "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
           "extensions.pocket.enabled" = lock-false;
           "extensions.screenshots.disabled" = lock-true;
