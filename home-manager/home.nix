@@ -20,7 +20,6 @@
       '';
     };
 
-
     # Use wallpaper for desktop/hyprpaper.nix
     ".config/wallpaper".source = ./wallpaper;
 
