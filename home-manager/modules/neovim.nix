@@ -25,6 +25,7 @@
       airline = {
         enable = true;
         powerline = true;
+        theme = "catppuccin";
       };
     };
     colorschemes = {
