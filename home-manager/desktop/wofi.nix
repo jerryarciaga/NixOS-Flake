@@ -13,7 +13,7 @@
   programs.wofi = {
     enable = true;
     settings = {
-      location = "center";
+      location = "top_left";
       insensitive = true;
       width = 250;
     };
@@ -63,7 +63,7 @@
         border: 1px #626880;
         border-style: solid;
       	border-radius: 10px;
-      	background-color: #303446;
+      	background-color: @ctp-mocha-base;
       	color: #c6d0f5;
         outline-color: #303446;
       }
@@ -79,10 +79,10 @@
       #outer-box {
       	margin: 2px;
       	padding: 10px;
-        border: 1px #626880;
+        border: 1px @ctp-mocha-base;
         border-style: solid;
-        border-radius: 20px;
-      	background-color: #303446;
+        border-radius: 30px;
+      	background-color: @ctp-mocha-base;
       }
       
       #scroll {
@@ -91,15 +91,18 @@
       
       #text {
       	padding: 4px;
-      	color: #c6d0f5;
+      	color: @ctp-mocha-text;
       }
       
       #entry:nth-child(even){
-      	background-color: #3C4053;
+      	background-color: @ctp-mocha-surface0;
+      }
+      #entry:nth-child(odd){
+      	background-color: @ctp-mocha-surface1;
       }
       
       #entry:selected {
-      	background-color: #626880;
+      	background-color: @ctp-mocha-surface2;
       }
       
       #text:selected {
