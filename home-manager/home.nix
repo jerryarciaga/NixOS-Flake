@@ -8,6 +8,7 @@
 
   home.packages = with pkgs; [
     flatpak
+    obsidian
     slurp
     grim
     xfce.thunar
@@ -31,6 +32,9 @@
   home.sessionVariables = {
     EDITOR = "vim";
   };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
   # Allow Flatpak applications to run via desktop launcher (wofi).
   xdg = {
