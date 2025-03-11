@@ -29,19 +29,16 @@
     ".local/share/fonts/Genshin_Elements.ttf".source = ./fonts/Genshin_Elements.ttf;
   };
 
-  home.sessionVariables = {
-    EDITOR = "vim";
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Allow Flatpak applications to run via desktop launcher (wofi).
-  xdg = {
+  # Bashrc
+  programs.bash = {
     enable = true;
-    systemDirs.data = [
-      "${config.home.homeDirectory}/.local/share/flatpak/exports/share"
-    ];
+    initExtra = ''
+      # include .profile if it exists
+      [[ -f ~/.profile ]] && . ~/.profile
+    '';
   };
 
   # Let Home Manager install and manage itself.
