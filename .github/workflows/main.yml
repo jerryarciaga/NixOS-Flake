@@ -17,9 +17,10 @@ on:
 permissions:
   actions: write
   checks: write
+  deployments: write
   issues: write
   pull-requests: write
-  
+  repository-projects: write
 
 jobs:
   lockfile:
