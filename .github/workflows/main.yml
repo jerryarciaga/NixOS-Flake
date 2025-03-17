@@ -14,14 +14,6 @@ on:
   schedule:
     - cron: '0 0 * * 0' # runs weekly on Sunday at 00:00
 
-permissions:
-  actions: write
-  checks: write
-  deployments: write
-  issues: write
-  pull-requests: write
-  repository-projects: write
-
 jobs:
   lockfile:
     runs-on: ubuntu-latest
@@ -33,6 +25,16 @@ jobs:
       - name: Update system flake.lock
         if: ${{ github.event_name != 'pull_request' }}
         uses: DeterminateSystems/update-flake-lock@v24
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        permissions:
+          actions: write
+          checks: write
+          contents: write
+          deployments: write
+          issues: write
+          pull-requests: write
+          repository-projects: write
         with:
           path-to-flake-dir: 'flake/'
           sign-commits: true
@@ -48,6 +50,16 @@ jobs:
       - name: Update home manager flake.lock
         if: ${{ github.event_name != 'pull_request' }}
         uses: DeterminateSystems/update-flake-lock@v24
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        permissions:
+          actions: write
+          checks: write
+          contents: write
+          deployments: write
+          issues: write
+          pull-requests: write
+          repository-projects: write
         with:
           path-to-flake-dir: 'home-manager/'
           sign-commits: true
