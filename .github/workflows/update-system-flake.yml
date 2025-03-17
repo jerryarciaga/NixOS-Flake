@@ -2,6 +2,9 @@ name: update-flake-lock
 on:
   workflow_dispatch: # allows manual triggering
   pull_request: # triggers every pull request
+  push:
+    branches:
+      - '**'
   schedule:
     - cron: '0 0 * * 0' # runs weekly on Sunday at 00:00
 
