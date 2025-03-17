@@ -15,7 +15,7 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@v1
       - name: Update flake.lock
         if: ${{ github.event_name != 'pull_request' }}
-        uses: DeterminateSystems/update-flake-lock@vX
+        uses: DeterminateSystems/update-flake-lock@v24
         with:
           path-to-flake-dir: 'flake/'
           sign-commits: true
