@@ -2,8 +2,8 @@
 
 {
   boot.kernelParams = [
+    "i915.enable_dpcd_backlight=1"
     "i915.force_probe=8086:4680"
-    "acpi_backlight=video"
   ];
   hardware = {
     intel-gpu-tools = {
