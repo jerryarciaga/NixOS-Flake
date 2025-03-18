@@ -1,18 +1,8 @@
 name: Update flake.lock
 on:
   workflow_dispatch: # allows manual triggering
-  pull_request: # triggers every pull request
-    branches:
-      - '*'         # matches every branch that doesn't contain a '/'
-      - '*/*'       # matches every branch containing a single '/'
-      - '**'        # matches every branch
-  push:
-    branches:
-      - '*'         # matches every branch that doesn't contain a '/'
-      - '*/*'       # matches every branch containing a single '/'
-      - '**'        # matches every branch
   schedule:
-    - cron: '0 0 * * 0' # runs weekly on Sunday at 00:00
+    - cron: '0 7 * * 2' # runs weekly on Tuesday at 00:00 PDT
 
 permissions:
   checks: write
