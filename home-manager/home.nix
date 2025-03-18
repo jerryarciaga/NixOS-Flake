@@ -8,6 +8,7 @@
 
   home.packages = with pkgs; [
     flatpak
+    github-cli
     obsidian
     slurp
     grim
