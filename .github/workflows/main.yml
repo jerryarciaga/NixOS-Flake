@@ -2,7 +2,7 @@ name: Update flake.lock
 on:
   workflow_dispatch: # allows manual triggering
   schedule:
-    - cron: '00 07 * * 2' # runs weekly on Tuesday at 00:00 PDT
+    - cron: '0 7 * * 2' # runs weekly on Tuesday at 00:00 PDT
 
 permissions:
   checks: write
