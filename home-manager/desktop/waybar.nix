@@ -48,7 +48,7 @@
         };
 
         "backlight/slider" = {
-          "min" = 0;
+          "min" = 10;
           "max" = 100;
           "orientation" = "vertical";
         };
