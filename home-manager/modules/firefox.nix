@@ -69,6 +69,7 @@ in
       Preferences = { 
           "layout.css.devPixelsPerPx" = "-1.0";
           "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
+          "browser.ml.chat.enabled" = lock-false;
           "extensions.pocket.enabled" = lock-false;
           "extensions.screenshots.disabled" = lock-true;
           "browser.topsites.contile.enabled" = lock-false;
