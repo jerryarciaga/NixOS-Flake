@@ -25,9 +25,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           branch: update-system-flake-lock-action
-          git-author-name: "Jerry's CI Bot"
+          git-author-name: "Jerry Arciaga [bot]"
           git-author-email: "re6freoz@rockorsomething.anonaddy.me"
-          git-committer-name: "Jerry's CI Bot"
+          git-committer-name: "Jerry Arciaga [bot]"
           git-committer-email: "re6freoz@rockorsomething.anonaddy.me"
           path-to-flake-dir: 'flake/'
           sign-commits: true
@@ -47,9 +47,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           branch: update-home-manager-flake-lock-action
-          git-author-name: "Jerry's CI Bot"
+          git-author-name: "Jerry Arciaga [bot]"
           git-author-email: "re6freoz@rockorsomething.anonaddy.me"
-          git-committer-name: "Jerry's CI Bot"
+          git-committer-name: "Jerry Arciaga [bot]"
           git-committer-email: "re6freoz@rockorsomething.anonaddy.me"
           path-to-flake-dir: 'home-manager/'
           sign-commits: true
