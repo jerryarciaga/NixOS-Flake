@@ -24,6 +24,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          branch: update-system-flake-lock-action
           git-author-name: "Jerry's CI Bot"
           git-author-email: "re6freoz@rockorsomething.anonaddy.me"
           git-committer-name: "Jerry's CI Bot"
@@ -45,6 +46,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          branch: update-home-manager-flake-lock-action
           git-author-name: "Jerry's CI Bot"
           git-author-email: "re6freoz@rockorsomething.anonaddy.me"
           git-committer-name: "Jerry's CI Bot"
