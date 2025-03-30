@@ -22,7 +22,7 @@ jobs:
         if: ${{ github.event_name != 'pull_request' }}
         uses: DeterminateSystems/update-flake-lock@v24
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.BOT_TOKEN }}
         with:
           branch: update-system-flake-lock-action
           git-author-name: "Jerry Arciaga [bot]"
@@ -45,7 +45,7 @@ jobs:
         if: ${{ github.event_name != 'pull_request' }}
         uses: DeterminateSystems/update-flake-lock@v24
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.BOT_TOKEN }}
         with:
           branch: update-home-manager-flake-lock-action
           git-author-name: "Jerry Arciaga [bot]"
