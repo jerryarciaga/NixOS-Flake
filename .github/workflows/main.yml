@@ -49,7 +49,6 @@ jobs:
           git-author-email: "re6freoz@rockorsomething.anonaddy.me"
           git-committer-name: "Jerry's CI Bot"
           git-committer-email: "re6freoz@rockorsomething.anonaddy.me"
-          path-to-flake-dir: 'flake/'
           path-to-flake-dir: 'home-manager/'
           sign-commits: true
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
