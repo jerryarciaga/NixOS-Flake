@@ -69,7 +69,6 @@ in
       Preferences = { 
           "layout.css.devPixelsPerPx" = "-1.0";
           "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
-          "browser.ml.chat.enabled" = lock-false;
           "extensions.pocket.enabled" = lock-false;
           "extensions.screenshots.disabled" = lock-true;
           "browser.topsites.contile.enabled" = lock-false;
@@ -89,6 +88,12 @@ in
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
           "security.insecure_connection_text.enabled" = lock-true;
           "privacy.globalprivacycontrol.enabled" = lock-true;
+          # Disable AI Tools
+          "browser.ml.enable" = lock-false;
+          "browser.ml.chat.enabled" = lock-false;
+          "browser.ml.chat.sidebar" = lock-false;
+          "browser.ml.chat.shortcuts" = lock-false;
+          "browser.ml.chat.shortcuts.custom" = lock-false;
       };
     };
   };
