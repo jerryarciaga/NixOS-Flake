@@ -46,7 +46,7 @@
           ./desktop/wofi.nix
 
           # Theme
-          catppuccin.homeManagerModules.catppuccin
+          catppuccin.homeModules.catppuccin
 
           # App configs
           ./modules/alacritty.nix
