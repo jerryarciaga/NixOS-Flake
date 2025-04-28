@@ -72,7 +72,6 @@
     displayManager = {
       gdm.enable = true;
     };
-    videoDrivers = [ "modesetting" ];
   };
 
   # Flatpak
