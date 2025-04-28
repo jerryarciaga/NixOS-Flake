@@ -67,6 +67,7 @@
         modules = defaultModules ++ [
           ./host/frappuccino/hostname.nix
           ./host/frappuccino/hardware-configuration.nix
+          ./modules/nvidia_graphics.nix
         ];
       };
 
