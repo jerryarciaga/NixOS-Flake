@@ -18,4 +18,5 @@
       ];
     };
   };
+  services.xserver.videoDrivers = ["modesetting"];
 }

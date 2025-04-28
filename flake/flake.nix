@@ -60,6 +60,17 @@
         ];
       };
 
+      # Frappuccino | HP Omen 8746
+      frappuccino = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = defaultModules ++ [
+          ./host/frappuccino/hostname.nix
+          ./host/frappuccino/hardware-configuration.nix
+          ./modules/nvidia_graphics.nix
+        ];
+      };
+
       # Coffee | Acer TravelMate
       coffee = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -81,7 +92,6 @@
           ./modules/intel_graphics.nix
         ];
       };
-
 
     };
   };
