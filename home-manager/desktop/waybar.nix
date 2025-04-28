@@ -83,7 +83,6 @@
         };
 
         "battery" = {
-          "bat" = "BAT0";
           "interval" = 30;
           "tooltip" = true;
           "tooltip-format" = "{capacity}% {time}";
