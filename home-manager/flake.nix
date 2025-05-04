@@ -4,6 +4,7 @@
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stylix.url = "github:danth/stylix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,6 +22,7 @@
   outputs = {
     nixpkgs,
     home-manager,
+    stylix,
     catppuccin,
     nixneovim,
     ...
@@ -46,6 +48,7 @@
           ./desktop/wofi.nix
 
           # Theme
+          stylix.homeManagerModules.stylix
           catppuccin.homeModules.catppuccin
 
           # App configs
