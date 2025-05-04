@@ -53,19 +53,6 @@
         halign = right
         valign = bottom
       }
-      
-      # User
-      label {
-        monitor =
-        text =    $USER
-        color = $color_blue
-        font_size = 18
-        font_family = HYWenHei
-        
-        position = 0, 100
-        halign = center
-        valign = bottom
-      }
             
       image {
           monitor =
