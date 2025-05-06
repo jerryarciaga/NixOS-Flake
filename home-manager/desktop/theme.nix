@@ -1,14 +1,14 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  catppuccin.gtk = {
+  stylix = {
     enable = true;
-    flavor = "mocha";
-    accent = "blue";
-    icon = {
-      enable = true;
-      accent = "blue";
-      flavor = "mocha";
+    base16Scheme =
+      "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    targets = {
+      alacritty.enable = false;
+      firefox.enable = false;
+      waybar.enable = false;
     };
   };
 }
