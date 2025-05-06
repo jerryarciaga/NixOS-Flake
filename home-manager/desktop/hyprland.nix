@@ -53,7 +53,7 @@
       # exec-once = $terminal
       # exec-once = nm-applet &
       # exec-once = waybar & hyprpaper &
-      exec-once = waybar &
+      exec-once = GTK_THEME=Adwaita waybar &
       exec-once = hyprpaper &
       
       
