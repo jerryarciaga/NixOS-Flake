@@ -27,6 +27,9 @@
       # NOTE: Comment these out during first install (nixos-install).
       lanzaboote.nixosModules.lanzaboote
       ./modules/secureboot.nix
+
+      # Audio
+      ./modules/audio.nix
       
       # Desktop
       ./modules/hyprland.nix
