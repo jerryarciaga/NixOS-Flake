@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   services.pipewire = {
@@ -6,4 +6,8 @@
     audio.enable = true;
     pulse.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    pavucontrol
+  ];
 }
