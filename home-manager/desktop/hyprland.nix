@@ -287,6 +287,7 @@
 
       # Bind screenshot
       bind = $mainMod CTRL SHIFT, S, exec, hyprshot -o "$HOME/Pictures/0. Screenshots" -m region
+      bind = , Print, exec, hyprshot -o "$HOME/Pictures/0. Screenshots" -m active -m output
 
       # Bind apps
       bind = $mainMod, B, exec, firefox
