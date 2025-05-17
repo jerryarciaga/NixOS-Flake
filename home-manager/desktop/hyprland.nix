@@ -286,7 +286,7 @@
       bind = $mainMod CTRL, S, exec, hyprlock
 
       # Bind screenshot
-      bind = $mainMod CTRL SHIFT, S, exec, cd "$HOME/Pictures/0. Screenshots"; grim
+      bind = $mainMod CTRL SHIFT, S, exec, hyprshot -o "$HOME/Pictures/0. Screenshots" -m region
 
       # Bind apps
       bind = $mainMod, B, exec, firefox

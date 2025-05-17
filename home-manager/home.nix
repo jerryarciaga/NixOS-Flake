@@ -13,6 +13,9 @@
     slurp
     grim
     xfce.thunar
+    xfce.tumbler
+    hyprshot
+    imv
   ];
 
   home.file = {
