@@ -10,8 +10,6 @@
     flatpak
     github-cli
     obsidian
-    slurp
-    grim
     xfce.thunar
     xfce.tumbler
     hyprshot
