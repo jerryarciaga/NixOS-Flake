@@ -48,7 +48,7 @@
           ./desktop/wofi.nix
 
           # Theme
-          stylix.homeManagerModules.stylix
+          stylix.homeModules.stylix
           catppuccin.homeModules.catppuccin
 
           # App configs
