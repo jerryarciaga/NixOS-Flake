@@ -67,8 +67,7 @@
   };
 	
   # Desktop - Display and Window Management
-  services.xserver = {
-    enable = true;
+  services = {
     displayManager = {
       gdm.enable = true;
     };
