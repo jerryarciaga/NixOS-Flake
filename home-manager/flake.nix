@@ -69,20 +69,10 @@
           inherit inputs;
         };
       };
-      gamingConfig = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
+      gamingConfig = defaultConfig // {
         modules = defaultModules ++ [
           ./modules/gaming.nix
         ];
-
-        # Use extraSpecialArgs
-        # to pass through arguments to home.nix
-        extraSpecialArgs = {
-          inherit inputs;
-        };
       };
     in {
       homeConfigurations."jerry" = defaultConfig;
