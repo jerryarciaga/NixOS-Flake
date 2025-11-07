@@ -30,13 +30,7 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      homeConfigurations."jerry" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [
+      defaultModules = [
           ./home.nix
 
           # Hyprland dots
@@ -62,6 +56,12 @@
           # Plugins
           nixneovim.nixosModules.default
         ];
+      defaultConfig = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
+        modules = defaultModules;
 
         # Use extraSpecialArgs
         # to pass through arguments to home.nix
@@ -69,5 +69,13 @@
           inherit inputs;
         };
       };
+      gamingConfig = defaultConfig // {
+        modules = defaultModules ++ [
+          ./modules/gaming.nix
+        ];
+      };
+    in {
+      homeConfigurations."jerry" = defaultConfig;
+      homeConfigurations."jerry@frappuccino" = gamingConfig;
     };
 }
