@@ -1,8 +1,9 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.ssh = {
     enable = true;
+    package = pkgs.openssh;
     enableDefaultConfig = false;
     matchBlocks = {
       "*" = {
@@ -16,7 +17,7 @@
         controlMaster = "no";
         controlPersist = "no";
       };
-      "GitHub" = {
+      "github.com" = {
         hostname = "github.com";
         user = "git";
         identityFile = config.home.homeDirectory + "/.ssh/github_ssh";
