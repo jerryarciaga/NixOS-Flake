@@ -61,6 +61,9 @@
 
           # Plugins
           nixneovim.nixosModules.default
+
+          # Services
+          ./modules/ssh.nix
         ];
 
         # Use extraSpecialArgs
