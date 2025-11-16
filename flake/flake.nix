@@ -60,6 +60,7 @@
           ./host/cappuccino/hostname.nix
           ./host/cappuccino/hardware-configuration.nix
           ./modules/intel_graphics.nix
+          ./modules/virt-manager.nix
         ];
       };
 
