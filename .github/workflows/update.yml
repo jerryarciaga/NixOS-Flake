@@ -29,7 +29,7 @@ jobs:
           git-author-email: "re6freoz@rockorsomething.anonaddy.me"
           git-committer-name: "Jerry Arciaga [bot]"
           git-committer-email: "re6freoz@rockorsomething.anonaddy.me"
-          path-to-flake-dir: 'flake/'
+          path-to-flake-dir: 'system/'
           sign-commits: true
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg-fingerprint: ${{ secrets.GPG_FINGERPRINT }}
