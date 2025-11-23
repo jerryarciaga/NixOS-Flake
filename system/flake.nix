@@ -75,16 +75,16 @@
         ];
       };
 
-      # Coffee | Acer TravelMate
-      coffee = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = defaultModules ++ [
-          ./host/coffee/hostname.nix
-          ./host/coffee/hardware-configuration.nix
-          ./modules/intel_graphics.nix
-        ];
-      };
+      # # Coffee | Acer TravelMate
+      # coffee = nixpkgs.lib.nixosSystem {
+      #   system = "x86_64-linux";
+      #   specialArgs = { inherit inputs; };
+      #   modules = defaultModules ++ [
+      #     ./host/coffee/hostname.nix
+      #     ./host/coffee/hardware-configuration.nix
+      #     ./modules/intel_graphics.nix
+      #   ];
+      # };
 
       # Americano | HP ProBook 640 G4
       americano = nixpkgs.lib.nixosSystem {
