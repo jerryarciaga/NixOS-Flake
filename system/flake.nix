@@ -41,6 +41,14 @@
   {
     nixosConfigurations = {
 
+      # Coffee Maker | Minimal NixOS installation media
+      coffeemaker = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./modules/installer.nix
+        ];
+      };
+
       # Latte | Lenovo Yoga 7 2-in-1 16IML9
       latte = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
