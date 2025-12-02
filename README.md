@@ -7,6 +7,13 @@ This project shows my progress as I learn and move into NixOS.
 * Qtile on Wayland
 * YubiKey
 
+# Obtain an live ISO for installation
+You can download the latest image file by following the download links found [here](https://nixos.org/download/). Alternatively, you can build the ISO using the base image with some preinstalled tools for convenience.
+```
+$ cd system
+$ nix build .#nixosConfigurations.coffeemaker.config.system.build.isoImage
+```
+
 # Installation
 This installation instructions are specific to how I use my system. You might need to modify to suit your needs. But, for first-time installation, we generally follow the manual installation instructions until right before the nixos-generate command.
 
@@ -88,6 +95,5 @@ After booting up, check to see that Secure Boot is now enabled.
 ```
 $ sbctl status
 ```
-Congrats! You can follow directions.
 
-## Post Installation
+# Post Installation
