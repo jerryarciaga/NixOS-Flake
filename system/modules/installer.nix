@@ -3,8 +3,17 @@
 {
   imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix") ];
 
+  # Nix Experimental Features
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   # Networking
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "coffee-maker";
+    networkmanager.enable = true;
+  };
 
   # Programs and features
   programs = {
@@ -30,5 +39,6 @@
     git
     wget
     w3m
+    dmidecode
   ];
 }
