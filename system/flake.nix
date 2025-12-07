@@ -83,6 +83,17 @@
         ];
       };
 
+      # Macchiato | Dell Inspiron 24 Model 
+      macchiato = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = defaultModules ++ [
+          ./host/macchiato/hostname.nix
+          ./host/macchiato/hardware-configuration.nix
+          ./modules/nvidia_graphics.nix
+        ];
+      };
+
       # # Coffee | Acer TravelMate
       # coffee = nixpkgs.lib.nixosSystem {
       #   system = "x86_64-linux";
