@@ -37,6 +37,9 @@
     tmp.cleanOnBoot = true;
   };
 
+  # Automatically check for firmware updates
+  services.fwupd.enable = true;
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
