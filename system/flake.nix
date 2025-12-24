@@ -57,6 +57,7 @@
           ./host/latte/hostname.nix
           ./host/latte/hardware-configuration.nix
           ./modules/intel_graphics.nix
+          ./modules/tailscale.nix
         ];
       };
 
