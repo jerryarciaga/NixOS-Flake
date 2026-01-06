@@ -70,6 +70,7 @@
           ./host/cappuccino/hardware-configuration.nix
           ./modules/intel_graphics.nix
           ./modules/virt-manager.nix
+          ./modules/tailscale.nix
         ];
       };
 
