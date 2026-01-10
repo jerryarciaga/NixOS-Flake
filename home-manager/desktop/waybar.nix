@@ -74,6 +74,7 @@
           "format-50" = "";
           "format-25" = "";
           "format-0" = "";
+          "format-bluetooth" = "󰥰";
         };
 
         "clock" = {
