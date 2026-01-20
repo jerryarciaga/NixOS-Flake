@@ -71,6 +71,7 @@
           ./modules/intel_graphics.nix
           ./modules/virt-manager.nix
           ./modules/tailscale.nix
+          ./modules/virtualbox.nix
         ];
       };
 
