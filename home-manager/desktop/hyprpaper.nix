@@ -12,7 +12,11 @@
         "~/.config/wallpaper/seven_elements_ctp.jpg"
       ];
       wallpaper = [
-        ", ~/.config/wallpaper/seven_elements_ctp.jpg"
+        {
+          monitor = "";
+          path = "~/.config/wallpaper/seven_elements_ctp.jpg";
+          fit_mode = "fill";
+        }
       ];
     };
   };
