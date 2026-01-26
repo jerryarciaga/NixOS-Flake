@@ -8,6 +8,7 @@
     enable = true;
     settings = {
       ipc = "off";
+      splash = "false";
       preload = [
         "~/.config/wallpaper/seven_elements_ctp.jpg"
       ];
