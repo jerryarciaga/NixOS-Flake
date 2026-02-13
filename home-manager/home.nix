@@ -11,8 +11,8 @@
     flatpak
     github-cli
     obsidian
-    xfce.thunar
-    xfce.tumbler
+    thunar
+    tumbler
     hyprshot
     imv
   ];
