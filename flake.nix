@@ -50,6 +50,9 @@
       lanzaboote.nixosModules.lanzaboote
       ./system/modules/secureboot.nix
 
+      # User
+      ./system/users/jerry.nix
+
       # Audio
       ./system/modules/audio.nix
       
@@ -79,6 +82,7 @@
         specialArgs = { inherit inputs; };
         modules = defaultSystemModules ++ [
           ./system/host/latte/hostname.nix
+          ./system/users/rc.nix
           ./system/host/latte/hardware-configuration.nix
           ./system/modules/intel_graphics.nix
           ./system/modules/tailscale.nix
@@ -91,6 +95,7 @@
         specialArgs = { inherit inputs; };
         modules = defaultSystemModules ++ [
           ./system/host/cappuccino/hostname.nix
+          ./system/users/rc.nix
           ./system/host/cappuccino/hardware-configuration.nix
           ./system/modules/intel_graphics.nix
           ./system/modules/virt-manager.nix
