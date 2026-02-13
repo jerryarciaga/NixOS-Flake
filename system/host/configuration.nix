@@ -1,11 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ 
-      ../users/jerry.nix
-      ../users/rc.nix
-    ];
 
   nix.settings.experimental-features = [
     "nix-command"

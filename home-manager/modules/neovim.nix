@@ -1,44 +1,20 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
 
-  nixpkgs.overlays = [
-    inputs.nixneovim.overlays.default
-  ];
-
-  programs.nixneovim = {
+  programs.neovim= {
     enable = true;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-    extraConfigVim = ''
-      set mouse=a
-      set number relativenumber
-      
-      set softtabstop=2
-      set tabstop=2
-      set shiftwidth=2
-      
-      set expandtab
-      set smartindent
-    '';
-    plugins = {
-      airline = {
-        enable = true;
-        powerline = true;
-        theme = "catppuccin";
-      };
-    };
-    colorschemes = {
-      catppuccin = {
-        enable = true;
-        flavour = "mocha";
-        dimInactive = {
-          enabled = true;
-          percentage = 0.15;
-        };
-      };
-    };
+    extraConfig = builtins.readFile ./config/nvim/init.vim;
+    plugins = [
+      pkgs.vimPlugins.vim-airline
+      {
+        plugin = pkgs.vimPlugins.vim-airline-themes;
+        config = "let g:airline_theme = 'base16_gruvbox_dark_medium'";
+      }
+    ];
   };
 
 }
