@@ -25,7 +25,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           branch: update-flake-lock-action
-          path-to-flake-dir: '/'
           sign-commits: true
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg-fingerprint: ${{ secrets.GPG_FINGERPRINT }}
