@@ -10,7 +10,6 @@
     yubico-piv-tool
     flatpak
     github-cli
-    obsidian
     thunar
     tumbler
     hyprshot
