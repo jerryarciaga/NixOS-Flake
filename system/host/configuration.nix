@@ -71,9 +71,6 @@
     };
   };
 
-  # Flatpak
-  services.flatpak.enable = true;
-
   # GNUPG
   programs.gnupg.agent = {
     enable = true;
@@ -82,19 +79,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # Flatpak specific stuff
-  xdg.portal = {
-    enable = true;
-    config = {
-      common = {
-        default = [
-          "gtk"
-        ];
-      };
-    };
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
-  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
