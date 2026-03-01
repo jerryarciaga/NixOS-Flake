@@ -85,6 +85,7 @@
           ./system/users/rc.nix
           ./system/host/latte/hardware-configuration.nix
           ./system/modules/intel_graphics.nix
+          ./system/modules/flatpak.nix
           ./system/modules/tailscale.nix
         ];
       };
@@ -98,6 +99,7 @@
           ./system/users/rc.nix
           ./system/host/cappuccino/hardware-configuration.nix
           ./system/modules/intel_graphics.nix
+          ./system/modules/flatpak.nix
           ./system/modules/virt-manager.nix
           ./system/modules/tailscale.nix
           ./system/modules/virtualbox.nix
@@ -112,6 +114,7 @@
           ./system/host/frappuccino/hostname.nix
           ./system/host/frappuccino/hardware-configuration.nix
           ./system/modules/nvidia_graphics.nix
+          ./system/modules/flatpak.nix
         ];
       };
 
