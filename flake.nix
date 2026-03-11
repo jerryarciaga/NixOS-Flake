@@ -57,6 +57,7 @@
       ./system/modules/audio.nix
       
       # Desktop
+      ./system/modules/display_manager.nix
       ./system/modules/hyprland.nix
 
       # Apps

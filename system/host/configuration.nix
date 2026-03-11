@@ -64,13 +64,6 @@
     variant = "";
   };
 	
-  # Desktop - Display and Window Management
-  services = {
-    displayManager = {
-      gdm.enable = true;
-    };
-  };
-
   # GNUPG
   programs.gnupg.agent = {
     enable = true;
