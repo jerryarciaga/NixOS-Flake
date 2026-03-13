@@ -53,14 +53,16 @@
       # User
       ./system/users/jerry.nix
 
-      # Audio
-      ./system/modules/audio.nix
-      
-      # Desktop
-      ./system/modules/hyprland.nix
-
       # Apps
       ./system/modules/yubikey.nix
+    ];
+    defaultDesktopModules = defaultSystemModules ++ [
+      # Desktop
+      ./system/modules/display_manager.nix
+      ./system/modules/hyprland.nix
+      
+      # Audio
+      ./system/modules/audio.nix
     ];
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -80,11 +82,12 @@
       latte = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = defaultSystemModules ++ [
+        modules = defaultDesktopModules ++ [
           ./system/host/latte/hostname.nix
           ./system/users/rc.nix
           ./system/host/latte/hardware-configuration.nix
           ./system/modules/intel_graphics.nix
+          ./system/modules/flatpak.nix
           ./system/modules/tailscale.nix
         ];
       };
@@ -93,11 +96,12 @@
       cappuccino = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = defaultSystemModules ++ [
+        modules = defaultDesktopModules ++ [
           ./system/host/cappuccino/hostname.nix
           ./system/users/rc.nix
           ./system/host/cappuccino/hardware-configuration.nix
           ./system/modules/intel_graphics.nix
+          ./system/modules/flatpak.nix
           ./system/modules/virt-manager.nix
           ./system/modules/tailscale.nix
           ./system/modules/virtualbox.nix
@@ -108,10 +112,11 @@
       frappuccino = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = defaultSystemModules ++ [
+        modules = defaultDesktopModules ++ [
           ./system/host/frappuccino/hostname.nix
           ./system/host/frappuccino/hardware-configuration.nix
           ./system/modules/nvidia_graphics.nix
+          ./system/modules/flatpak.nix
         ];
       };
 
@@ -119,7 +124,7 @@
       macchiato = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = defaultSystemModules ++ [
+        modules = defaultDesktopModules ++ [
           ./system/host/macchiato/hostname.nix
           ./system/host/macchiato/hardware-configuration.nix
           ./system/modules/nvidia_graphics.nix
@@ -130,7 +135,7 @@
       americano = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = defaultSystemModules ++ [
+        modules = defaultDesktopModules ++ [
           ./system/host/americano/hostname.nix
           ./system/host/americano/hardware-configuration.nix
           ./system/modules/intel_graphics.nix
