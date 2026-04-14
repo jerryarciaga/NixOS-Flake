@@ -44,7 +44,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
 
     defaultSystemModules = [
-      ./system/host/configuration.nix
+      ./system/configuration.nix
 
       # NOTE: Comment these out during first install (nixos-install).
       lanzaboote.nixosModules.lanzaboote
@@ -66,7 +66,7 @@
     mkSystem = { hostName, modules }:
       nixpkgs.lib.nixosSystem {
         system = system;
-        modules = [ ./system/host/${hostName}/hardware-configuration.nix ] ++
+        modules = [ ./system/hardware-configuration/${hostName}.nix ] ++
           defaultSystemModules ++ modules;
         specialArgs = {
           inherit inputs hostName;
