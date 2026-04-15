@@ -11,7 +11,7 @@
 
   # Networking
   networking = {
-    hostName = "coffee-maker";
+    hostName = "coffeemaker";
     networkmanager.enable = true;
   };
 

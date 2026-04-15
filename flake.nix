@@ -40,107 +40,97 @@
   } @ inputs:
   
   let
-    # Modules all my hosts should have in common go here.
-    defaultSystemModules = [
-      # Default config
-      ./system/host/configuration.nix
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
 
-      # Secureboot (lanzaboote)
+    defaultSystemModules = [
+      ./system/configuration.nix
+
       # NOTE: Comment these out during first install (nixos-install).
       lanzaboote.nixosModules.lanzaboote
       ./system/modules/secureboot.nix
 
-      # User
       ./system/users/jerry.nix
-
-      # Apps
       ./system/modules/yubikey.nix
     ];
-    defaultDesktopModules = defaultSystemModules ++ [
-      # Desktop
-      ./system/modules/display_manager.nix
+
+    desktopModules = [
+      ./system/modules/luks.nix
+      ./system/modules/display-manager.nix
       ./system/modules/hyprland.nix
-      
-      # Audio
       ./system/modules/audio.nix
     ];
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+
+    mkSystem = { hostName, modules }:
+      nixpkgs.lib.nixosSystem {
+        system = system;
+        modules = [ ./system/hardware-configuration/${hostName}.nix ] ++
+          defaultSystemModules ++ modules;
+        specialArgs = {
+          inherit inputs hostName;
+        };
+      };
   in
   {
     nixosConfigurations = {
 
       # Coffee Maker | Minimal NixOS installation media
       coffeemaker = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = system;
         modules = [
           ./system/modules/installer.nix
         ];
       };
 
       # Latte | Lenovo Yoga 7 2-in-1 16IML9
-      latte = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = defaultDesktopModules ++ [
-          ./system/host/latte/hostname.nix
+      latte = mkSystem {
+        hostName = "latte";
+        modules = [
           ./system/users/rc.nix
-          ./system/host/latte/hardware-configuration.nix
-          ./system/modules/intel_graphics.nix
+          ./system/modules/intel-graphics.nix
           ./system/modules/flatpak.nix
           ./system/modules/tailscale.nix
-        ];
+        ] ++ desktopModules;
       };
 
       # Cappuccino | Dell Optiplex Tower 7010
-      cappuccino = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = defaultDesktopModules ++ [
-          ./system/host/cappuccino/hostname.nix
+      cappuccino = mkSystem {
+        hostName = "cappuccino";
+        modules = [
           ./system/users/rc.nix
-          ./system/host/cappuccino/hardware-configuration.nix
-          ./system/modules/intel_graphics.nix
+          ./system/modules/intel-graphics.nix
           ./system/modules/flatpak.nix
           ./system/modules/virt-manager.nix
           ./system/modules/tailscale.nix
           ./system/modules/virtualbox.nix
-        ];
+        ] ++ desktopModules;
       };
 
       # Frappuccino | HP Omen 8746
-      frappuccino = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = defaultDesktopModules ++ [
-          ./system/host/frappuccino/hostname.nix
-          ./system/host/frappuccino/hardware-configuration.nix
-          ./system/modules/nvidia_graphics.nix
+      frappuccino = mkSystem {
+        hostName = "frappuccino";
+        modules = [
+          ./system/modules/nvidia-graphics.nix
           ./system/modules/flatpak.nix
-        ];
+        ] ++ desktopModules;
       };
 
       # Macchiato | Dell Inspiron 24 Model 
-      macchiato = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = defaultDesktopModules ++ [
-          ./system/host/macchiato/hostname.nix
-          ./system/host/macchiato/hardware-configuration.nix
-          ./system/modules/nvidia_graphics.nix
-        ];
+      macchiato = mkSystem {
+        hostName = "macchiato";
+        modules = [
+          ./system/modules/nvidia-graphics.nix
+        ] ++ desktopModules;
       };
 
       # Americano | HP ProBook 640 G4
-      americano = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = defaultDesktopModules ++ [
-          ./system/host/americano/hostname.nix
-          ./system/host/americano/hardware-configuration.nix
-          ./system/modules/intel_graphics.nix
-        ];
+      americano = mkSystem {
+        hostName = "americano";
+        modules = [
+          ./system/modules/intel-graphics.nix
+        ] ++ desktopModules;
       };
+
     };
 
     homeConfigurations."jerry" = home-manager.lib.homeManagerConfiguration {
