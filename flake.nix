@@ -78,7 +78,7 @@
 
       # Coffee Maker | Minimal NixOS installation media
       coffeemaker = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = system;
         modules = [
           ./system/modules/installer.nix
         ];
