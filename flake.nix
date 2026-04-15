@@ -55,11 +55,9 @@
     ];
 
     desktopModules = [
-      # Desktop
-      ./system/modules/display_manager.nix
+      ./system/modules/luks.nix
+      ./system/modules/displaymanager.nix
       ./system/modules/hyprland.nix
-      
-      # Audio
       ./system/modules/audio.nix
     ];
 
