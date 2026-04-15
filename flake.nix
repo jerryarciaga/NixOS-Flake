@@ -89,7 +89,7 @@
         hostName = "latte";
         modules = [
           ./system/users/rc.nix
-          ./system/modules/intel_graphics.nix
+          ./system/modules/intel-graphics.nix
           ./system/modules/flatpak.nix
           ./system/modules/tailscale.nix
         ] ++ desktopModules;
@@ -100,7 +100,7 @@
         hostName = "cappuccino";
         modules = [
           ./system/users/rc.nix
-          ./system/modules/intel_graphics.nix
+          ./system/modules/intel-graphics.nix
           ./system/modules/flatpak.nix
           ./system/modules/virt-manager.nix
           ./system/modules/tailscale.nix
@@ -112,7 +112,7 @@
       frappuccino = mkSystem {
         hostName = "frappuccino";
         modules = [
-          ./system/modules/nvidia_graphics.nix
+          ./system/modules/nvidia-graphics.nix
           ./system/modules/flatpak.nix
         ] ++ desktopModules;
       };
@@ -121,7 +121,7 @@
       macchiato = mkSystem {
         hostName = "macchiato";
         modules = [
-          ./system/modules/nvidia_graphics.nix
+          ./system/modules/nvidia-graphics.nix
         ] ++ desktopModules;
       };
 
@@ -129,7 +129,7 @@
       americano = mkSystem {
         hostName = "americano";
         modules = [
-          ./system/modules/intel_graphics.nix
+          ./system/modules/intel-graphics.nix
         ] ++ desktopModules;
       };
 
