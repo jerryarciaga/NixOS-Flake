@@ -2,7 +2,6 @@
 
 let
   system = "x86_64-linux";
-  pkgs = inputs.nixpkgs.legacyPackages.${system};
 
   defaultSystemModules = [
     ./configuration.nix
@@ -24,7 +23,7 @@ let
 
   mkSystem = { hostName, modules }:
     inputs.nixpkgs.lib.nixosSystem {
-      system = system;
+      inherit system;
       modules = [ ./hardware-configuration/${hostName}.nix ] ++
         defaultSystemModules ++ modules;
       specialArgs = {
