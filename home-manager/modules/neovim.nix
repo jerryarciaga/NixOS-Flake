@@ -4,6 +4,8 @@
 
   programs.neovim= {
     enable = true;
+    withRuby = true;
+    withPython3 = true;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
@@ -13,6 +15,7 @@
       {
         plugin = pkgs.vimPlugins.vim-airline-themes;
         config = "let g:airline_theme = 'base16_gruvbox_dark_medium'";
+        type = "viml";
       }
     ];
   };
