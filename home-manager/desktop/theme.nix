@@ -1,6 +1,9 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
+
+  gtk.gtk4.theme = config.gtk.theme;
+
   stylix = {
     enable = true;
     base16Scheme =
@@ -11,4 +14,5 @@
       waybar.enable = false;
     };
   };
+
 }
