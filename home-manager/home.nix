@@ -1,34 +1,36 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "jerry";
-  home.homeDirectory = "/home/jerry";
+  home = {
+    username = "jerry";
+    homeDirectory = "/home/jerry";
+    preferXdgDirectories = true;
+    stateVersion = "24.11"; # Please read the comment before changing.
 
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+    packages = with pkgs; [
+      yubico-piv-tool
+      flatpak
+      github-cli
+      thunar
+      tumbler
+      hyprshot
+      imv
+    ];
 
-  home.packages = with pkgs; [
-    yubico-piv-tool
-    flatpak
-    github-cli
-    thunar
-    tumbler
-    hyprshot
-    imv
-  ];
+    file = {
+      ".profile" = {
+        text = ''
+          . "${config.home.profileDirectory}/etc/profile.d/hm-session-vars.sh"
+        '';
+      };
 
-  home.file = {
-    ".profile" = {
-      text = ''
-        . "${config.home.profileDirectory}/etc/profile.d/hm-session-vars.sh"
-      '';
+      # Use wallpaper for desktop/hyprpaper.nix
+      ".config/wallpaper".source = ./wallpaper;
+
+      # Custom fonts
+      ".local/share/fonts/zh-cn.ttf".source = ./fonts/zh-cn.ttf;
+      ".local/share/fonts/Genshin_Elements.ttf".source = ./fonts/Genshin_Elements.ttf;
     };
-
-    # Use wallpaper for desktop/hyprpaper.nix
-    ".config/wallpaper".source = ./wallpaper;
-
-    # Custom fonts
-    ".local/share/fonts/zh-cn.ttf".source = ./fonts/zh-cn.ttf;
-    ".local/share/fonts/Genshin_Elements.ttf".source = ./fonts/Genshin_Elements.ttf;
   };
 
   # Allow unfree packages
