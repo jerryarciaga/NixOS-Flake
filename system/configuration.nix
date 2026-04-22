@@ -2,10 +2,13 @@
 
 {
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    auto-optimise-store = true;
+  };
 
   # If you are experiencing timeouts due to slow internet (curl error 200),
   # the default setting for stalled-download-timeout may prevent
