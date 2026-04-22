@@ -14,6 +14,7 @@
       core.sshCommand = "ssh -i " + config.home.homeDirectory +
         "/.ssh/github_ssh";
       commit.gpgSign = true;
+      signing.format = "openpgp";
       init.defaultBranch = "main";
     };
   };
