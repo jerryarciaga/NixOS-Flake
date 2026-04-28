@@ -49,6 +49,7 @@ in
       ./users/rc.nix
       ./modules/intel-graphics.nix
       ./modules/flatpak.nix
+      ./modules/virt-manager.nix
       ./modules/tailscale.nix
     ] ++ desktopModules;
   };
