@@ -63,6 +63,7 @@
       nixos_cleanup() {
         sudo nix store optimise
         sudo nix-collect-garbage --delete-older-than 2d
+        nix-collect-garbage --delete-older-than 2d
       }
 
       nix_build_iso() {
