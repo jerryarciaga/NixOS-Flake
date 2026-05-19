@@ -4,6 +4,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "hyprlang";
     extraConfig = ''
       # This is an example Hyprland config file.
       # Refer to the wiki for more information.
@@ -161,7 +162,6 @@
 
       # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
       dwindle {
-          pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
           preserve_split = true # You probably want this
       }
       
@@ -221,7 +221,7 @@
       bind = $mainMod, V, togglefloating,
       bind = $mainMod, R, exec, $menu
       bind = $mainMod, P, pseudo, # dwindle
-      bind = $mainMod, T, togglesplit, # dwindle
+      # bind = $mainMod, T, togglesplit, # dwindle
       
       # Move focus with mainMod + vim keys
       bind = $mainMod, H, movefocus, l
