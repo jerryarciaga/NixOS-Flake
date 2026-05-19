@@ -5,7 +5,7 @@
     enable = true;
     package = pkgs.openssh;
     enableDefaultConfig = false;
-    matchBlocks = {
+    settings = {
       "*" = {
         forwardAgent = false;
         addKeysToAgent = "no";
