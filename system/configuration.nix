@@ -43,7 +43,7 @@
   # Enable networking
   networking = {
     networkmanager.enable = true;
-    hostName = hostName;
+    inherit hostName;
   };
 
   # Set your time zone.
