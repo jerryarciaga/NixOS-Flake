@@ -11,7 +11,7 @@
       yubico-piv-tool
       flatpak
       github-cli
-      thunar
+      nautilus
       tumbler
       hyprshot
       imv
