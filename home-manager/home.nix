@@ -8,6 +8,7 @@
     stateVersion = "24.11"; # Please read the comment before changing.
 
     packages = with pkgs; [
+      swaybg
       yubico-piv-tool
       flatpak
       github-cli
