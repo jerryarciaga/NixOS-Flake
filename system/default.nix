@@ -16,7 +16,7 @@ let
 
   desktopModules = [
     ./modules/luks.nix
-    ./modules/niri.nix
+    ./modules/display-window-manager.nix
     ./modules/audio.nix
   ];
 
