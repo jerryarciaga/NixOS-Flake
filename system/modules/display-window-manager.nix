@@ -14,10 +14,8 @@
   };
 
   # Niri window manager
-  programs.niri = {
-    enable = true;
-  };
-  
+  programs.niri.enable = true;
+
   systemd.user.services.niri.enableDefaultPath = false;
 
   # Niri dependencies
