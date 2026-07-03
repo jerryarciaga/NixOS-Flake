@@ -13,11 +13,8 @@ let
       modules = [
         ./home.nix
 
-        # Hyprland dots
+        # Niri dots
         ./desktop/theme.nix
-        ./desktop/hyprland.nix
-        ./desktop/hyprpaper.nix
-        ./desktop/hyprlock.nix
         ./desktop/waybar.nix
         ./desktop/wofi.nix
 
