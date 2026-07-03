@@ -13,7 +13,6 @@
       github-cli
       nautilus
       tumbler
-      hyprshot
       imv
     ];
 
