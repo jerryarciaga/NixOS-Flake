@@ -2,11 +2,6 @@
 
 {
 
-  catppuccin.alacritty = {
-    enable = true;
-    flavor = "mocha";
-  };
-
   programs.alacritty = {
     enable = true;
     settings = {
