@@ -3,15 +3,28 @@
 {
 
   # Login manager
-  services.greetd = {
+  programs.regreet = {
     enable = true;
     settings = {
-      default_session = {
-        command = "${config.programs.niri.package}/bin/niri-session";
-        user = "jerry";
+      GTK = {
+        application_prefer_dark_theme = true;
+        cursor_theme_name = "Adwaita";
+        cursor_blink = true;
+        font_name = "Cantarell 16";
+        icon_theme_name = "Adwaita";
+        theme_name = "Adwaita";
+      };
+      background = {
+        path = ./background/gruv-abstract-maze.png;
+        fit = "Fill";
+      };
+      commands = {
+        reboot = ["systemctl" "reboot"];
+        poweroff = ["systemctl" "poweroff"];
       };
     };
   };
+  
 
   # Niri window manager
   programs.niri.enable = true;
