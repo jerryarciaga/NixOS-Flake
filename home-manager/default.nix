@@ -21,7 +21,6 @@ let
 
         # Theme
         inputs.stylix.homeModules.stylix
-        inputs.catppuccin.homeModules.catppuccin
 
         # App configs
         ./modules/alacritty.nix
