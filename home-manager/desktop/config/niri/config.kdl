@@ -92,8 +92,7 @@ spawn-sh-at-startup "swaybg -m fill -i ~/.config/wallpaper/gruv_coffee_battery.p
 spawn-at-startup "waybar"
 
 hotkey-overlay {
-    // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 screenshot-path "~/Pictures/0. Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
