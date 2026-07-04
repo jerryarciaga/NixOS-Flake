@@ -14,6 +14,7 @@ let
         ./home.nix
 
         # Niri dots
+        ./desktop/niri.nix
         ./desktop/theme.nix
         ./desktop/waybar.nix
         ./desktop/wofi.nix
