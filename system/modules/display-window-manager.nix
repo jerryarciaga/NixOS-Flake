@@ -34,6 +34,7 @@
 
   # Niri dependencies
   environment.systemPackages = with pkgs; [
+    xwayland-satellite
     brightnessctl
   ];
 
