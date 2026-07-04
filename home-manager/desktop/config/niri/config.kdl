@@ -88,8 +88,8 @@ layout {
     }
 }
 
+spawn-sh-at-startup "swaybg -m fill -i ~/.config/wallpaper/gruv_coffee_battery.png"
 spawn-at-startup "waybar"
-
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
