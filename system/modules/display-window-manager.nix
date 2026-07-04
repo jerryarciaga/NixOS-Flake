@@ -1,18 +1,19 @@
-{ config, pkgs, lib, inputs, ... }:
+{ pkgs, ... }:
 
 {
 
   # Login manager
   programs.regreet = {
     enable = true;
+    theme = {
+      name = "Gruvbox";
+      package = pkgs.gruvbox-dark-gtk;
+    };
     settings = {
       GTK = {
         application_prefer_dark_theme = true;
-        cursor_theme_name = "Adwaita";
         cursor_blink = true;
         font_name = "Cantarell 16";
-        icon_theme_name = "Adwaita";
-        theme_name = "Adwaita";
       };
       background = {
         path = ./background/gruv-abstract-maze.png;
