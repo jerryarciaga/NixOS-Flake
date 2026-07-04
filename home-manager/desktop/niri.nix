@@ -2,7 +2,7 @@
  
 {
 
-  xdg.configFile."niri/config.kdl".source = ./config/niri/config.kdl;
+  xdg.configFile.'niri/config.kdl'.source = ./config/niri/config.kdl;
 
   programs.alacritty.enable = true; # Super+T in the default setting (terminal)
   programs.fuzzel.enable = true; # Super+D in the default setting (app launcher)
