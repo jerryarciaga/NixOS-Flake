@@ -32,7 +32,7 @@ window {
 }
 
 .launcher {
-  font-size: 18px;
+  font-size: 54px;
   color: $fg1;
   padding: 6px;
 }
@@ -71,7 +71,7 @@ window {
 .volume-icon {
   font-family: "Symbols Nerd Font";
   color: $blue;
-  font-size: 16px;
+  font-size: 32px;
 }
 
 .volume-widget:hover .volume-icon {
@@ -85,7 +85,7 @@ window {
 .battery-icon {
   font-family: "Symbols Nerd Font";
   color: $green;
-  font-size: 16px;
+  font-size: 32px;
 }
 
 .battery-widget:hover .battery-icon {
@@ -110,6 +110,6 @@ window {
 .time {
   font-family: "Cascadia Mono NF";
   color: $yellow;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
 }
