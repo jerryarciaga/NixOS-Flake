@@ -1,28 +1,33 @@
-;; Vertical bar window
 (defwindow bar
   :monitor 0
-  :geometry (geometry :x "0px"
-                       :y "0px"
-                       :width "40px"
-                       :height "100%"
-                       :anchor "left center")
+  :geometry (geometry :x "5px"
+                      :y "0"
+                      :width "30px"
+                      :height "50%"
+                      :anchor "center left")
   :stacking "fg"
   :exclusive true
-  :windowtype "dock"
   (bar-content))
+
+;; State
+(defvar volume_hover false)
+(defvar battery_hover false)
 
 ;; Poll variables
 (defpoll time_var :interval "1s"
-  "date '+%H:%M'")
-
-(defpoll date_var :interval "60s"
-  "date '+%d/%m'")
+  "date '+%H%n%M'")
 
 (defpoll volume_var :interval "2s"
   "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}'")
 
 (defpoll battery_var :interval "30s"
-  "cat /sys/class/power_supply/BAT0/capacity 2>/dev/null || echo 'N/A'")
+  "cat /sys/class/power_supply/BAT0/capacity 2>/dev/null || echo '0'")
+
+(defpoll battery_status_var :interval "30s"
+  "cat /sys/class/power_supply/BAT0/status 2>/dev/null || echo 'Unknown'")
+
+(defpoll battery_time_var :interval "30s"
+  "upower -i $(upower -e | grep BAT) 2>/dev/null | grep -E 'time to (empty|full)' | awk -F: '{print $2}' | xargs || echo ''")
 
 ;; Main vertical layout
 (defwidget bar-content []
@@ -30,34 +35,85 @@
        :orientation "v"
        :space-evenly false
        :halign "center"
-       :valign "start"
+       :valign "fill"
        :vexpand true
 
+    ;; Top: launcher
     (box :class "top-section"
          :orientation "v"
          :space-evenly false
          :spacing 10
       (button :class "launcher"
-              :onclick "rofi -show drun &"
+              :onclick "fuzzel &"
               "")
     )
 
+    ;; Middle: empty filler, eats leftover space
     (box :class "middle-section"
          :orientation "v"
-         :space-evenly false
-         :spacing 8
          :vexpand true
-         :valign "center"
-      (label :class "volume" :text "${volume_var}%")
-      (label :class "battery" :text "${battery_var}%")
     )
 
+    ;; Bottom: volume, battery, time
     (box :class "bottom-section"
          :orientation "v"
          :space-evenly false
-         :spacing 4
+         :spacing 10
          :valign "end"
-      (label :class "date" :text date_var)
+
+      ;; Volume: icon + hover-reveal slider
+      (eventbox :onhover "eww update volume_hover=true"
+                :onhoverlost "eww update volume_hover=false"
+        (box :class "volume-widget"
+             :orientation "v"
+             :space-evenly false
+             :spacing 4
+             :halign "center"
+
+          (revealer :transition "slideup"
+                    :reveal volume_hover
+                    :duration "200ms"
+            (scale :class "volume-slider"
+                   :orientation "v"
+                   :flipped true
+                   :value volume_var
+                   :min 0
+                   :max 100
+                   :onchange "wpctl set-volume @DEFAULT_AUDIO_SINK@ {}%")
+          )
+
+          (label :class "volume-icon"
+                 :text {volume_var == 0 ? "󰝟" : volume_var < 34 ? "󰕿" : volume_var < 67 ? "󰖀" : "󰕾"})
+        )
+      )
+
+      ;; Battery: icon + hover-reveal percentage/time
+      (eventbox :onhover "eww update battery_hover=true"
+                :onhoverlost "eww update battery_hover=false"
+        (box :class "battery-widget"
+             :orientation "v"
+             :space-evenly false
+             :spacing 4
+             :halign "center"
+
+          (revealer :transition "slideup"
+                    :reveal battery_hover
+                    :duration "200ms"
+            (box :class "battery-info"
+                 :orientation "v"
+                 :space-evenly false
+                 :spacing 2
+                 :halign "center"
+              (label :class "battery-percent" :text "${battery_var}%")
+              (label :class "battery-time" :text battery_time_var)
+            )
+          )
+
+          (label :class "battery-icon"
+                 :text {battery_status_var == "Charging" ? "󰂄" : battery_var >= 90 ? "󰁹" : battery_var >= 70 ? "󰂂" : battery_var >= 50 ? "󰁿" : battery_var >= 30 ? "󰁼" : battery_var >= 10 ? "󰁻" : "󰁺"})
+        )
+      )
+
       (label :class "time" :text time_var)
     )
   ))
