@@ -45,7 +45,7 @@
          :spacing 10
       (button :class "launcher"
               :onclick "fuzzel &"
-              "")
+              "󱄅")
     )
 
     ;; Middle: empty filler, eats leftover space
