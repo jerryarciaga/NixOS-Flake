@@ -89,7 +89,7 @@ layout {
 }
 
 spawn-sh-at-startup "swaybg -m fill -i ~/.config/wallpaper/gruv_coffee_battery.png"
-spawn-at-startup "waybar"
+spawn-sh-at-startup "eww open bar"
 
 hotkey-overlay {
     skip-at-startup
