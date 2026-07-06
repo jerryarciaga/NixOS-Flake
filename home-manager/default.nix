@@ -17,7 +17,6 @@ let
         ./desktop/niri.nix
         ./desktop/theme.nix
         ./desktop/eww.nix
-        ./desktop/waybar.nix
         ./desktop/wofi.nix
 
         # Theme
