@@ -34,6 +34,12 @@ input {
     position x=1280 y=0
 }
 
+// Layer rule
+layer-rule {
+    match namespace="^gtk-layer-shell$"
+    geometry-corner-radius 12
+}
+
 layout {
     gaps 12
 
@@ -139,6 +145,7 @@ binds {
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
     // Applications
+    Mod+E hotkey-overlay-title="Open the file browser" { spawn "nautilus"; }
     Mod+B hotkey-overlay-title="Open a Browser: firefox" { spawn "firefox"; }
     Mod+Shift+B hotkey-overlay-title="Open a Private Browser: firefox" { spawn "firefox" "--private-window"; }
 
