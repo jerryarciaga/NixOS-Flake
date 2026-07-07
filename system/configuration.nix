@@ -20,12 +20,19 @@
   # Bootloader.
 	boot = {
     kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [
+      "quiet"
+      "rd.udev.log_level=3"
+      "rd.systemd.show_status=auto"
+    ];
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
+    consoleLogLevel = 3;
     initrd = {
       enable = true;
+      verbose = false;
       luks.devices = {
         luksroot = {
           device = "/dev/disk/by-label/nixos";
@@ -33,6 +40,17 @@
       };
     };
     tmp.cleanOnBoot = true;
+
+    # Plymouth
+    plymouth = {
+      enable = true;
+      theme = "black_hud";
+      themePackages = with pkgs; [
+        (adi1090x-plymouth-themes.override {
+          selected_themes = [ "black_hud" ];
+        })
+      ];
+    };
   };
 
   # Automatically check for firmware updates

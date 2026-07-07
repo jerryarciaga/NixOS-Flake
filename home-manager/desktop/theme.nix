@@ -7,11 +7,11 @@
   stylix = {
     enable = true;
     base16Scheme =
-      "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+      "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
     targets = {
-      alacritty.enable = false;
+      alacritty.enable = true;
       firefox.enable = false;
-      waybar.enable = false;
+      waybar.enable = true;
     };
   };
 

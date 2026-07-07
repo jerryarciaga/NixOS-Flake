@@ -16,8 +16,7 @@ let
 
   desktopModules = [
     ./modules/luks.nix
-    ./modules/display-manager.nix
-    ./modules/hyprland.nix
+    ./modules/display-window-manager.nix
     ./modules/audio.nix
   ];
 

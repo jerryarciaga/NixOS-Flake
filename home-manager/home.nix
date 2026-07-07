@@ -8,12 +8,12 @@
     stateVersion = "24.11"; # Please read the comment before changing.
 
     packages = with pkgs; [
+      swaybg
       yubico-piv-tool
       flatpak
       github-cli
       nautilus
       tumbler
-      hyprshot
       imv
     ];
 
@@ -23,9 +23,6 @@
           . "${config.home.profileDirectory}/etc/profile.d/hm-session-vars.sh"
         '';
       };
-
-      # Use wallpaper for desktop/hyprpaper.nix
-      ".config/wallpaper".source = ./wallpaper;
 
       # Custom fonts
       ".local/share/fonts/zh-cn.ttf".source = ./fonts/zh-cn.ttf;

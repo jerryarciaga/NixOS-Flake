@@ -2,11 +2,6 @@
 
 {
 
-  catppuccin.alacritty = {
-    enable = true;
-    flavor = "mocha";
-  };
-
   programs.alacritty = {
     enable = true;
     settings = {
@@ -25,7 +20,7 @@
         blur = lib.mkForce true;
         padding.x = lib.mkForce 10;
         padding.y = lib.mkForce 10;
-        decorations = lib.mkForce "Full";
+        decorations = lib.mkForce "None";
       };
       colors = {
         transparent_background_colors = true;

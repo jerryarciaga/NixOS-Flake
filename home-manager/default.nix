@@ -13,17 +13,14 @@ let
       modules = [
         ./home.nix
 
-        # Hyprland dots
+        # Niri dots
+        ./desktop/niri.nix
         ./desktop/theme.nix
-        ./desktop/hyprland.nix
-        ./desktop/hyprpaper.nix
-        ./desktop/hyprlock.nix
-        ./desktop/waybar.nix
+        ./desktop/eww.nix
         ./desktop/wofi.nix
 
         # Theme
         inputs.stylix.homeModules.stylix
-        inputs.catppuccin.homeModules.catppuccin
 
         # App configs
         ./modules/alacritty.nix

@@ -1,0 +1,115 @@
+// Gruvbox Dark palette
+$bg0:      #282828;
+$bg1:      #3c3836;
+$bg2:      #504945;
+$fg1:      #ebdbb2;
+$fg2:      #d5c4a1;
+$gray:     #928374;
+$red:      #fb4934;
+$green:    #b8bb26;
+$yellow:   #fabd2f;
+$blue:     #83a598;
+$purple:   #d3869b;
+$aqua:     #8ec07c;
+$orange:   #fe8019;
+
+window {
+  background-color: transparent;
+}
+
+* {
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+}
+
+.bar {
+  background-color: $bg0;
+  padding: 10px 0;
+  border-right: 2px solid $bg2;
+  border-radius: 12px;
+  box-shadow: 0 0 0 transparent;
+
+}
+
+.launcher {
+  font-size: 54px;
+  color: $fg1;
+  padding: 6px;
+}
+
+.launcher:hover {
+  color: $orange;
+}
+
+.volume-widget {
+  padding: 4px 0;
+}
+
+.volume-slider {
+  min-height: 100px;
+}
+
+.volume-slider trough {
+  background-color: $bg2;
+  border-radius: 4px;
+  min-width: 2px;
+}
+
+.volume-slider trough highlight {
+  background-color: $blue;
+  border-radius: 4px;
+  min-width: 2px;
+}
+
+.volume-slider slider {
+  background-color: $fg1;
+  border-radius: 50%;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.volume-icon {
+  font-family: "Symbols Nerd Font";
+  color: $blue;
+  font-size: 32px;
+}
+
+.volume-widget:hover .volume-icon {
+  color: $fg1;
+}
+
+.battery-widget {
+  padding: 4px 0;
+}
+
+.battery-icon {
+  font-family: "Symbols Nerd Font";
+  color: $green;
+  font-size: 32px;
+}
+
+.battery-widget:hover .battery-icon {
+  color: $fg1;
+}
+
+.battery-info {
+  padding-bottom: 4px;
+}
+
+.battery-percent {
+  color: $fg1;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.battery-time {
+  color: $gray;
+  font-size: 9px;
+}
+
+.time {
+  font-family: "Cascadia Mono NF";
+  color: $yellow;
+  font-size: 30px;
+  font-weight: bold;
+}
