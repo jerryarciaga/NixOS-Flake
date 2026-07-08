@@ -1,0 +1,6 @@
+spawn-sh-at-startup "swaybg -m fill -i ~/.config/wallpaper/gruv_coffee_battery.png"
+spawn-sh-at-startup "eww open bar"
+
+hotkey-overlay {
+    skip-at-startup
+}
