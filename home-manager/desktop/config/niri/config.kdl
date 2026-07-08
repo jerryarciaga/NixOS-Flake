@@ -4,8 +4,9 @@
 // Find the full list of options on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Input
 
-include "modules/layer-rules.kdl"
 include "modules/startup.kdl"
+include "modules/layer-rules.kdl"
+include "modules/window-rules.kdl"
 
 input {
     keyboard {
@@ -92,41 +93,11 @@ layout {
     }
 }
 
-
-
 screenshot-path "~/Pictures/0. Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 animations {
     // Uncomment to turn off all animations.
     // off
-}
-
-window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
-}
-
-// Open the Firefox picture-in-picture player as floating by default.
-window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
-}
-
-// Example: block out two password managers from screen capture.
-// (This example rule is commented out with a "/-" in front.)
-window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
-
-    block-out-from "screen-capture"
-}
-
-window-rule {
-    geometry-corner-radius 8
-    clip-to-geometry true
 }
 
 binds {
