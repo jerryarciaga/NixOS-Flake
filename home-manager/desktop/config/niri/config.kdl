@@ -95,11 +95,6 @@ layout {
 
 screenshot-path "~/Pictures/0. Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
-animations {
-    // Uncomment to turn off all animations.
-    // off
-}
-
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
