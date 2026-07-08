@@ -1,0 +1,5 @@
+layer-rule {
+    match namespace="^gtk-layer-shell$"
+    match at-startup=true
+    geometry-corner-radius 12
+}
