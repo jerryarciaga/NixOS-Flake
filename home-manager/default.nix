@@ -4,7 +4,10 @@ let
   system = "x86_64-linux";
   pkgs = inputs.nixpkgs.legacyPackages.${system};
 
-  mkHome = { modules ? [ ] }:
+  mkHome = {
+    modules ? [ ],
+    wallpaper ? ./desktop/wallpaper/gruv_coffee_battery.png 
+  }:
     inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
 
@@ -17,7 +20,6 @@ let
         ./desktop/niri.nix
         ./desktop/theme.nix
         ./desktop/eww.nix
-        ./desktop/wofi.nix
 
         # Theme
         inputs.stylix.homeModules.stylix
@@ -37,7 +39,7 @@ let
       # Use extraSpecialArgs
       # to pass through arguments to home.nix
       extraSpecialArgs = {
-        inherit inputs;
+        inherit inputs wallpaper;
       };
     };
 in

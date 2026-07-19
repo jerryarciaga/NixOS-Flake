@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, wallpaper, ... }:
 
 {
 
@@ -6,6 +6,7 @@
 
   stylix = {
     enable = true;
+    image = wallpaper;
     base16Scheme =
       "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
     targets = {

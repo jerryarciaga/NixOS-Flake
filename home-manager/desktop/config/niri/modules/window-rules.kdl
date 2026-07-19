@@ -1,0 +1,39 @@
+window-rule {
+    open-maximized true
+}
+
+window-rule {
+    match app-id="Alacritty"
+    match title="Bitwarden"
+    match app-id="Nautilus$"
+    open-maximized false
+}
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-maximized false
+    open-floating true
+}
+
+// Example: block out two password managers from screen capture.
+// (This example rule is commented out with a "/-" in front.)
+window-rule {
+    match title="Bitwarden"
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+}
+window-rule {
+    match title="Bitwarden"
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screencast"
+}
+
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+}

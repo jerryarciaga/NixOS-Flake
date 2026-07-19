@@ -9,6 +9,7 @@
 
     packages = with pkgs; [
       swaybg
+      wl-clipboard
       yubico-piv-tool
       flatpak
       github-cli

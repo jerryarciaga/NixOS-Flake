@@ -3,7 +3,7 @@
   :geometry (geometry :x "5px"
                       :y "0"
                       :width "30px"
-                      :height "50%"
+                      :height "30%"
                       :anchor "center left")
   :stacking "fg"
   :exclusive true
@@ -11,6 +11,7 @@
 
 ;; State
 (defvar volume_hover false)
+(defvar brightness_hover false)
 (defvar battery_hover false)
 
 ;; Poll variables
@@ -20,14 +21,14 @@
 (defpoll volume_var :interval "2s"
   "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}'")
 
+(defpoll brightness_var :interval "2s"
+  "brightnessctl -m | awk -F, '{print $4}' | tr -d '%'")
+
 (defpoll battery_var :interval "30s"
   "cat /sys/class/power_supply/BAT0/capacity 2>/dev/null || echo '0'")
 
 (defpoll battery_status_var :interval "30s"
   "cat /sys/class/power_supply/BAT0/status 2>/dev/null || echo 'Unknown'")
-
-(defpoll battery_time_var :interval "30s"
-  "upower -i $(upower -e | grep BAT) 2>/dev/null | grep -E 'time to (empty|full)' | awk -F: '{print $2}' | xargs || echo ''")
 
 ;; Main vertical layout
 (defwidget bar-content []
@@ -54,12 +55,38 @@
          :vexpand true
     )
 
-    ;; Bottom: volume, battery, time
+    ;; Bottom: volume, brightness, battery, time
     (box :class "bottom-section"
          :orientation "v"
          :space-evenly false
          :spacing 10
          :valign "end"
+
+      ;; Brightness: icon + hover-reveal slider
+      (eventbox :onhover "eww update brightness_hover=true"
+                :onhoverlost "eww update brightness_hover=false"
+        (box :class "brightness-widget"
+             :orientation "v"
+             :space-evenly false
+             :spacing 4
+             :halign "center"
+
+          (revealer :transition "slideup"
+                    :reveal brightness_hover
+                    :duration "200ms"
+            (scale :class "brightness-slider"
+                   :orientation "v"
+                   :flipped true
+                   :value brightness_var
+                   :min 0
+                   :max 100
+                   :onchange "brightnessctl set {}%")
+          )
+
+          (label :class "brightness-icon"
+                 :text {brightness_var < 34 ? "󰃞" : brightness_var < 67 ? "󰃟" : "󰃠"})
+        )
+      )
 
       ;; Volume: icon + hover-reveal slider
       (eventbox :onhover "eww update volume_hover=true"
@@ -105,7 +132,6 @@
                  :spacing 2
                  :halign "center"
               (label :class "battery-percent" :text "${battery_var}%")
-              (label :class "battery-time" :text battery_time_var)
             )
           )
 

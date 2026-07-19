@@ -1,0 +1,7 @@
+spawn-sh-at-startup "eww open bar"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+screenshot-path "~/Pictures/0. Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
