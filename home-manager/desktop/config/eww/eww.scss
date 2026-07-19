@@ -28,7 +28,6 @@ window {
   border-right: 2px solid $bg2;
   border-radius: 12px;
   box-shadow: 0 0 0 transparent;
-
 }
 
 .launcher {
@@ -78,6 +77,43 @@ window {
   color: $fg1;
 }
 
+.brightness-widget {
+  padding: 4px 0;
+}
+
+.brightness-slider {
+  min-height: 100px;
+}
+
+.brightness-slider trough {
+  background-color: $bg2;
+  border-radius: 4px;
+  min-width: 2px;
+}
+
+.brightness-slider trough highlight {
+  background-color: $orange;
+  border-radius: 4px;
+  min-width: 2px;
+}
+
+.brightness-slider slider {
+  background-color: $fg1;
+  border-radius: 50%;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.brightness-icon {
+  font-family: "Symbols Nerd Font";
+  color: $orange;
+  font-size: 32px;
+}
+
+.brightness-widget:hover .brightness-icon {
+  color: $fg1;
+}
+
 .battery-widget {
   padding: 4px 0;
 }
@@ -100,11 +136,6 @@ window {
   color: $fg1;
   font-size: 15px;
   font-weight: bold;
-}
-
-.battery-time {
-  color: $gray;
-  font-size: 9px;
 }
 
 .time {
