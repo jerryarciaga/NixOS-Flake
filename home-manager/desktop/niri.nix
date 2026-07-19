@@ -1,11 +1,15 @@
-{ ... }:
+{ wallpaper, ... }:
  
 {
 
   xdg.configFile = {
-    "niri".source = ./config/niri;
-    "wallpaper".source = ./wallpaper;
+    "niri/config.kdl".source = ./config/niri/config.kdl;
+    "niri/modules".source = ./config/niri/modules;
+    "niri/wallpaper.kdl".text = ''
+      spawn-sh-at-startup "swaybg -m fill -i ${wallpaper}"
+    '';
   };
+
 
   programs.swaylock.enable = true; # Super+Alt+L in the default setting (screen locker)
   programs.fuzzel.enable = true; # Super+D in the default setting (app launcher)
