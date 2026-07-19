@@ -12,6 +12,7 @@
     targets = {
       alacritty.enable = true;
       firefox.enable = false;
+      hyprland.enable = false;
       waybar.enable = true;
     };
   };
