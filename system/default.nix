@@ -5,6 +5,7 @@ let
 
   defaultSystemModules = [
     ./configuration.nix
+    inputs.disko.nixosModules.disko
 
     # NOTE: Comment these out during first install (nixos-install).
     inputs.lanzaboote.nixosModules.lanzaboote
@@ -20,13 +21,18 @@ let
     ./modules/audio.nix
   ];
 
-  mkSystem = { hostName, modules }:
+  mkSystem = {
+    hostName,
+    device ? "/dev/nvme0n1",
+    diskoModule ? [ ./hardware-configuration/disko.nix ],
+    modules
+  }:
     inputs.nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [ ./hardware-configuration/${hostName}.nix ] ++
-        defaultSystemModules ++ modules;
+        diskoModule ++ defaultSystemModules ++ modules;
       specialArgs = {
-        inherit inputs hostName;
+        inherit inputs device hostName;
       };
     };
 in
@@ -44,6 +50,7 @@ in
   # Latte | Lenovo Yoga 7 2-in-1 16IML9
   latte = mkSystem {
     hostName = "latte";
+    diskoModule = [ ];
     modules = [
       ./users/rc.nix
       ./modules/intel-graphics.nix
@@ -56,6 +63,7 @@ in
   # Cappuccino | Dell Optiplex Tower 7010
   cappuccino = mkSystem {
     hostName = "cappuccino";
+    diskoModule = [ ];
     modules = [
       ./users/rc.nix
       ./modules/intel-graphics.nix
@@ -68,6 +76,7 @@ in
   # Frappuccino | HP Omen 8746
   frappuccino = mkSystem {
     hostName = "frappuccino";
+    device = "/dev/sda";
     modules = [
       ./modules/nvidia-graphics.nix
       ./modules/flatpak.nix
@@ -77,6 +86,7 @@ in
   # Macchiato | Dell Inspiron 24 Model 
   macchiato = mkSystem {
     hostName = "macchiato";
+    diskoModule = [ ];
     modules = [
       ./modules/nvidia-graphics.nix
     ] ++ desktopModules;
@@ -85,6 +95,7 @@ in
   # Americano | HP ProBook 640 G4
   americano = mkSystem {
     hostName = "americano";
+    diskoModule = [ ];
     modules = [
       ./modules/intel-graphics.nix
     ] ++ desktopModules;
