@@ -36,6 +36,7 @@
     };
   };
   environment.systemPackages = with pkgs; [ 
+    disko
     git
     wget
     w3m
