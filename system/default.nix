@@ -76,7 +76,6 @@ in
   # Frappuccino | HP Omen 8746
   frappuccino = mkSystem {
     hostName = "frappuccino";
-    device = "/dev/sda";
     modules = [
       ./modules/nvidia-graphics.nix
       ./modules/flatpak.nix
