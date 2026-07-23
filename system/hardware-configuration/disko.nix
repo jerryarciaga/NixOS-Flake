@@ -30,7 +30,7 @@
                 };
                 content = {
                   type = "btrfs";
-                  extraArgs = [ "-f" ];
+                  extraArgs = [ "-f" "-L" "nixos" ];
                   subvolumes = {
                     "/root" = {
                       mountpoint = "/";
