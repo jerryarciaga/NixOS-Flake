@@ -5,6 +5,10 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
     # System inputs
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.1.0";
       inputs.nixpkgs.follows = "nixpkgs";
