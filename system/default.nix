@@ -78,7 +78,7 @@ in
     hostName = "frappuccino";
     modules = [
       ./modules/nvidia-graphics.nix
-      ./modules/flatpak.nix
+      ./modules/gaming.nix
     ] ++ desktopModules;
   };
   
