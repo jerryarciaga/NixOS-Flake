@@ -53,6 +53,7 @@ in
     diskoModule = [ ];
     modules = [
       ./users/rc.nix
+      ./modules/bluetooth.nix
       ./modules/intel-graphics.nix
       ./modules/flatpak.nix
       ./modules/virt-manager.nix
@@ -78,6 +79,7 @@ in
     hostName = "frappuccino";
     modules = [
       ./modules/nvidia-graphics.nix
+      ./modules/bluetooth.nix
       ./modules/gaming.nix
     ] ++ desktopModules;
   };
