@@ -3,7 +3,7 @@
 {
 
   # Login manager
-  programs.regreet = {
+  services.displayManager.regreet = {
     enable = true;
     theme = {
       name = "Gruvbox";
