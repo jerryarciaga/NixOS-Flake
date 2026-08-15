@@ -96,9 +96,9 @@ in
   # Americano | HP ProBook 640 G4
   americano = mkSystem {
     hostName = "americano";
-    diskoModule = [ ];
     modules = [
       ./modules/intel-graphics.nix
+      ./modules/virt-manager.nix
     ] ++ desktopModules;
   };
 
