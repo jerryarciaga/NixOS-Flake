@@ -50,7 +50,6 @@ in
   # Latte | Lenovo Yoga 7 2-in-1 16IML9
   latte = mkSystem {
     hostName = "latte";
-    diskoModule = [ ];
     modules = [
       ./users/rc.nix
       ./modules/bluetooth.nix
