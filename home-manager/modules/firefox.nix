@@ -131,7 +131,7 @@ in
           "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
           "extensions.pocket.enabled" = lock-false;
           "extensions.screenshots.disabled" = lock-true;
-          "browser.theme.content-theme" = { Value = 2; Status = "locked"; };
+          "browser.theme.content-theme" = { Value = 0; Status = "locked"; };
           "browser.topsites.contile.enabled" = lock-false;
           "browser.formfill.enable" = lock-false;
           "browser.search.suggest.enabled" = lock-false;
