@@ -45,7 +45,12 @@ let
 in
 
 {
-
+  
+  "jerry@latte" = mkHome {
+    modules = [
+      ./modules/social
+    ];
+  };
   jerry = mkHome { };
 
 }
