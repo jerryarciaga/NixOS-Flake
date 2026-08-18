@@ -80,6 +80,7 @@ in
       ./modules/nvidia-graphics.nix
       ./modules/bluetooth.nix
       ./modules/gaming.nix
+      inputs.aagl.nixosModules.default
     ] ++ desktopModules;
   };
   

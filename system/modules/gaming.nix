@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
 
@@ -16,5 +16,8 @@
   environment.systemPackages = with pkgs; [
     protonup-qt
   ];
+
+  nix.settings = inputs.aagl.nixConfig;
+  programs.anime-game-launcher.enable = true;
 
 }
