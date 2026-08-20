@@ -32,6 +32,14 @@ window-rule {
 
     block-out-from "screencast"
 }
+window-rule {
+    match title="Yubico Authenticator"
+    block-out-from "screencast"
+}
+window-rule {
+    match title="Yubico Authenticator"
+    block-out-from "screen-capture"
+}
 
 window-rule {
     geometry-corner-radius 8
