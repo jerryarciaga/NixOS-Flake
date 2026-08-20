@@ -16,6 +16,7 @@ let
   ];
 
   desktopModules = [
+    ./modules/plymouth.nix
     ./modules/luks.nix
     ./modules/display-window-manager.nix
     ./modules/audio.nix
