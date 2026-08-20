@@ -41,16 +41,6 @@
     };
     tmp.cleanOnBoot = true;
 
-    # Plymouth
-    plymouth = {
-      enable = true;
-      theme = "black_hud";
-      themePackages = with pkgs; [
-        (adi1090x-plymouth-themes.override {
-          selected_themes = [ "black_hud" ];
-        })
-      ];
-    };
   };
 
   # Automatically check for firmware updates
