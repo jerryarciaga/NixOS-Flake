@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
 {
-  programs.discord.enable = true;
+  programs.vesktop.enable = true;
   home.packages = [ pkgs.teams-for-linux ];
 }
