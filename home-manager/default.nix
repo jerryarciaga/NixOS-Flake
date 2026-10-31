@@ -49,6 +49,7 @@ in
   "jerry@latte" = mkHome {
     modules = [
       ./modules/social.nix
+      ./modules/obs.nix
     ];
   };
   jerry = mkHome { };
