@@ -32,7 +32,6 @@
     consoleLogLevel = 3;
     initrd = {
       enable = true;
-      verbose = false;
       luks.devices = {
         luksroot = {
           device = "/dev/disk/by-label/nixos";
