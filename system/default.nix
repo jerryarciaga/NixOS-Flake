@@ -58,6 +58,7 @@ in
       ./modules/flatpak.nix
       ./modules/virt-manager.nix
       ./modules/tailscale.nix
+      ./modules/obs-settings.nix
     ] ++ desktopModules;
   };
   

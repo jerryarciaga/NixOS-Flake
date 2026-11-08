@@ -15,6 +15,7 @@
         intel-media-driver
         intel-ocl
         intel-vaapi-driver
+        vpl-gpu-rt # Support for OBS Recording
       ];
     };
   };

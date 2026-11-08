@@ -16,6 +16,7 @@
       nautilus
       tumbler
       imv
+      vlc
     ];
 
     file = {
