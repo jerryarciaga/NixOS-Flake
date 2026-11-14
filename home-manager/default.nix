@@ -50,6 +50,9 @@ in
     modules = [
       ./modules/social.nix
       ./modules/obs.nix
+
+      # Additional programs
+      { home.packages = with pkgs; [ gimp ]; }
     ];
   };
   jerry = mkHome { };
