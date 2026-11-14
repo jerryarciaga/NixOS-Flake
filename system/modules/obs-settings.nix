@@ -11,4 +11,8 @@
 
   security.polkit.enable = true;
 
+  # Enable Virtual Camera
+  programs.obs-studio.enableVirtualCamera = true;
+  users.users."jerry".extraGroups = ["video"];
+
 }
