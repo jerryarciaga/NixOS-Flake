@@ -65,7 +65,7 @@ in
   # Cappuccino | Dell Optiplex Tower 7010
   cappuccino = mkSystem {
     hostName = "cappuccino";
-    diskoModule = [ ];
+    device = "/dev/sda";
     modules = [
       ./users/rc.nix
       ./modules/intel-graphics.nix
